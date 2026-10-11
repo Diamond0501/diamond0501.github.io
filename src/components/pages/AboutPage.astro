@@ -1,0 +1,50 @@
+---
+import { Picture } from 'astro:assets';
+import portrait from '../../assets/portrait/yiting-chen-portrait.jpg';
+import { about } from '../../data/pages/about';
+import { site, type Locale } from '../../data/site';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Closing from '../Closing.astro';
+import PageHead from '../PageHead.astro';
+import RecList from '../RecList.astro';
+import SplitSection from '../SplitSection.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = about[locale];
+---
+
+<BaseLayout {locale} pageKey="about" title={t.title} description={t.description}>
+  <PageHead eyebrow={t.head.eyebrow} title={site.name} lead={t.head.lead}>
+    <p class="credentials" slot="credentials">
+      {t.head.credentials}
+    </p>
+    <figure class="photo portrait">
+      <Picture
+        src={portrait}
+        formats={['avif', 'webp']}
+        widths={[480, 720, 960]}
+        sizes="(max-width: 860px) 90vw, 26rem"
+        alt={t.head.portraitAlt}
+        loading="eager"
+      />
+    </figure>
+  </PageHead>
+
+  <SplitSection title={t.path.title} tinted>
+    <RecList items={t.path.items} />
+  </SplitSection>
+
+  <SplitSection title={t.stance.title}>
+    <div class="text">
+      {t.stance.paragraphs.map((paragraph) => (
+        <p>{paragraph}</p>
+      ))}
+    </div>
+  </SplitSection>
+
+  <Closing {locale} />
+</BaseLayout>

@@ -1,0 +1,13 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  icon: string;
+}
+
+const { icon } = Astro.props;
+---
+
+<span class="icon-tile" aria-hidden="true">
+  <Icon name={`ph:${icon}-duotone`} is:inline />
+</span>

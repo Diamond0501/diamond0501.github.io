@@ -1,0 +1,14 @@
+---
+import couplesPhoto from '../../assets/photos/paartherapie-hands.jpg';
+import { couples } from '../../data/pages/couples';
+import type { Locale } from '../../data/site';
+import ServicePage from './ServicePage.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<ServicePage {locale} pageKey="couples" content={couples[locale]} photo={couplesPhoto} />

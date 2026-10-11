@@ -1,0 +1,47 @@
+---
+import { Icon } from 'astro-icon/components';
+import { faq } from '../../data/pages/faq';
+import type { Locale } from '../../data/site';
+import { pathFor } from '../../i18n/routes';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Closing from '../Closing.astro';
+import PageHead from '../PageHead.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = faq[locale];
+---
+
+<BaseLayout {locale} pageKey="faq" title={t.title} description={t.description}>
+  <PageHead {...t.head} />
+
+  <section class="tint">
+    <div class="wrap">
+      <div class="faq card">
+        {t.items.map((item) => (
+          <details>
+            <summary>
+              {item.question}
+              <Icon name="ph:plus" aria-hidden="true" />
+            </summary>
+            <div class="text">
+              {item.answer.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+              {item.link && (
+                <p>
+                  <a href={pathFor(item.link.pageKey, locale)}>{item.link.label}</a>
+                </p>
+              )}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Closing {locale} />
+</BaseLayout>

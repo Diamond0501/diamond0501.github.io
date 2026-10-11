@@ -1,0 +1,26 @@
+---
+import { Icon } from 'astro-icon/components';
+import { locales, site, type Locale } from '../data/site';
+import { pathFor, type PageKey } from '../i18n/routes';
+import { languageNames, ui } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  pageKey?: PageKey;
+}
+
+const { locale, pageKey } = Astro.props;
+---
+
+<div class="langs" role="group" aria-label={ui[locale].languageLabel}>
+  <Icon name="ph:globe-simple" aria-hidden="true" />
+  {locales.map((other) =>
+    other === locale ? (
+      <span aria-current="true">{languageNames[other]}</span>
+    ) : (
+      <a href={pathFor(pageKey ?? 'home', other)} lang={site.locales[other]} hreflang={site.locales[other]}>
+        {languageNames[other]}
+      </a>
+    ),
+  )}
+</div>

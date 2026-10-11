@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+  eyebrow?: string;
+  tinted?: boolean;
+  id?: string;
+}
+
+const { title, eyebrow, tinted = false, id } = Astro.props;
+---
+
+<section class={tinted ? 'tint' : 'section'} {id}>
+  <div class="wrap two-col">
+    <div>
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h2>{title}</h2>
+    </div>
+    <div>
+      <slot />
+    </div>
+  </div>
+</section>

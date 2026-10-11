@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yitingchen.de/sitemap-index.xml

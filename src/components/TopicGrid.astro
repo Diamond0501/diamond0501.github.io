@@ -1,0 +1,21 @@
+---
+import IconTile from './IconTile.astro';
+
+interface Props {
+  items: { icon: string; label?: string; title: string; text: string }[];
+  four?: boolean;
+}
+
+const { items, four = false } = Astro.props;
+---
+
+<ul class:list={['topic-grid', { four }]}>
+  {items.map((item) => (
+    <li class="topic card">
+      <IconTile icon={item.icon} />
+      {item.label && <p class="eyebrow">{item.label}</p>}
+      <h3>{item.title}</h3>
+      <p>{item.text}</p>
+    </li>
+  ))}
+</ul>

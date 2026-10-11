@@ -1,0 +1,117 @@
+---
+import { contact, crisisLines } from '../../data/pages/contact';
+import { site, type Locale } from '../../data/site';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHead from '../PageHead.astro';
+import RecList from '../RecList.astro';
+import SplitSection from '../SplitSection.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = contact[locale];
+const [firstHelpline, secondHelpline] = crisisLines.helplines;
+---
+
+<BaseLayout {locale} pageKey="contact" title={t.title} description={t.description}>
+  <PageHead {...t.head} />
+
+  <SplitSection id="anfrage" title={t.details.title} tinted>
+    {/* The field names and maxlength values are what apps-script/contact-form.gs reads and allows. */}
+    <form class="card inquiry" action={site.contactForm} method="post">
+      <input type="hidden" name="lang" value={locale} />
+      <label>
+        {t.form.name}
+        <input name="name" autocomplete="name" maxlength="200" required />
+      </label>
+      <label>
+        {t.form.email}
+        <input name="email" type="email" autocomplete="email" maxlength="254" required />
+      </label>
+      <label class="wide">
+        {t.form.message}
+        <textarea name="message" rows="6" maxlength="5000" required></textarea>
+      </label>
+      <label class="trap" aria-hidden="true">
+        Website
+        <input name="website" tabindex="-1" autocomplete="off" />
+      </label>
+      <p class="wide hint">
+        {t.form.privacy.before}
+        <a href="/datenschutz/" hreflang={site.locales.de}>
+          {t.form.privacy.link}
+        </a>
+        {t.form.privacy.after}
+      </p>
+      <div class="wide form-actions">
+        <button class="btn" type="submit">
+          {t.form.submit}
+        </button>
+        <div role="status">
+          <p data-state="sending" hidden>
+            {t.form.sending}
+          </p>
+          <p data-state="sent" hidden>
+            {t.form.sent}
+          </p>
+          <p data-state="failed" hidden>
+            {t.form.failed.before}
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+            {t.form.failed.after}
+          </p>
+        </div>
+      </div>
+    </form>
+    <div class="contact-lines">
+      <a class="big-link" href={`mailto:${site.email}`}>
+        {site.email}
+      </a>
+      <a class="big-link" href={site.phone.href}>
+        {site.phone.display}
+      </a>
+    </div>
+    <RecList items={t.details.items} />
+  </SplitSection>
+
+  <SplitSection title={t.crisis.title}>
+    <div class="text">
+      <p>
+        {t.crisis.text} <a href={firstHelpline.href}>{firstHelpline.display}</a> {t.crisis.or}{' '}
+        <a href={secondHelpline.href}>{secondHelpline.display}</a>
+      </p>
+      <p>
+        {t.crisis.emergency} <a href={crisisLines.emergency.href}>{crisisLines.emergency.display}</a>
+      </p>
+    </div>
+  </SplitSection>
+</BaseLayout>
+
+<script>
+  // Without JS the form posts straight to the Apps Script, which answers with its own result page.
+  for (const form of document.querySelectorAll<HTMLFormElement>('form.inquiry')) {
+    const button = form.querySelector('button')!;
+    const states = form.querySelectorAll<HTMLElement>('[data-state]');
+    const show = (state: string) => states.forEach((el) => (el.hidden = el.dataset.state !== state));
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const body = new URLSearchParams([...new FormData(form)] as [string, string][]);
+      body.set('js', '1');
+      button.disabled = true;
+      show('sending');
+      try {
+        const response = await fetch(form.action, { method: 'POST', body });
+        const result = await response.json();
+        if (!result.ok) throw new Error('rejected');
+        form.reset();
+        show('sent');
+      } catch {
+        show('failed');
+      } finally {
+        button.disabled = false;
+      }
+    });
+  }
+</script>

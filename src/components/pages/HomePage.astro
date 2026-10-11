@@ -1,0 +1,59 @@
+---
+import { Picture } from 'astro:assets';
+import coachingPhoto from '../../assets/photos/coaching-lake.jpg';
+import couplesPhoto from '../../assets/photos/paartherapie-hands.jpg';
+import { home } from '../../data/pages/home';
+import type { Locale } from '../../data/site';
+import { pathFor } from '../../i18n/routes';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Closing from '../Closing.astro';
+import Hero from '../Hero.astro';
+import RecList from '../RecList.astro';
+import SplitSection from '../SplitSection.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = home[locale];
+const offers = [
+  { ...t.offers.couples, photo: couplesPhoto, href: pathFor('couples', locale) },
+  { ...t.offers.coaching, photo: coachingPhoto, href: pathFor('coaching', locale) },
+];
+---
+
+<BaseLayout {locale} pageKey="home" title={t.title} description={t.description}>
+  <Hero {locale} content={t.hero} />
+
+  <SplitSection title={t.recognize.title} tinted>
+    <RecList items={t.recognize.items} />
+  </SplitSection>
+
+  <section class="section">
+    <div class="wrap offer-grid">
+      {offers.map((offer) => (
+        <article class="offer card">
+          <figure class="photo">
+            <Picture
+              src={offer.photo}
+              formats={['avif', 'webp']}
+              widths={[600, 900, 1200]}
+              sizes="(max-width: 860px) 100vw, 40rem"
+              alt=""
+            />
+          </figure>
+          <div class="offer-body">
+            <h3>{offer.title}</h3>
+            <p>{offer.text}</p>
+            <a class="more" href={offer.href}>
+              {offer.link}
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <Closing {locale} />
+</BaseLayout>

@@ -1,0 +1,28 @@
+---
+import { site, type Locale } from '../data/site';
+import { ui } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = ui[locale].footer;
+---
+
+<footer class="foot">
+  <div class="wrap">
+    <a href="/impressum/" hreflang={site.locales.de}>
+      {t.imprint}
+    </a>
+    <a href="/datenschutz/" hreflang={site.locales.de}>
+      {t.privacy}
+    </a>
+    <a href="/agb/" hreflang={site.locales.de}>
+      {t.terms}
+    </a>
+    <span>
+      © {new Date().getFullYear()} {site.name}
+    </span>
+  </div>
+</footer>

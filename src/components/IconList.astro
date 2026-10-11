@@ -1,0 +1,21 @@
+---
+import IconTile from './IconTile.astro';
+
+interface Props {
+  items: { icon: string; title: string; text: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="icon-list card">
+  {items.map((item) => (
+    <li>
+      <IconTile icon={item.icon} />
+      <div>
+        <h3>{item.title}</h3>
+        <p>{item.text}</p>
+      </div>
+    </li>
+  ))}
+</ul>

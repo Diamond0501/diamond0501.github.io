@@ -1,0 +1,14 @@
+---
+import coachingPhoto from '../../assets/photos/coaching-lake.jpg';
+import { coaching } from '../../data/pages/coaching';
+import type { Locale } from '../../data/site';
+import ServicePage from './ServicePage.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<ServicePage {locale} pageKey="coaching" content={coaching[locale]} photo={coachingPhoto} />

@@ -1,0 +1,38 @@
+---
+import type { GetStaticPaths } from 'astro';
+import AboutPage from '../components/pages/AboutPage.astro';
+import CoachingPage from '../components/pages/CoachingPage.astro';
+import ContactPage from '../components/pages/ContactPage.astro';
+import CouplesPage from '../components/pages/CouplesPage.astro';
+import FaqPage from '../components/pages/FaqPage.astro';
+import HomePage from '../components/pages/HomePage.astro';
+import { locales, type Locale } from '../data/site';
+import { routes, type PageKey } from '../i18n/routes';
+
+export const getStaticPaths = (() =>
+  (Object.keys(routes) as PageKey[]).flatMap((pageKey) =>
+    locales.map((locale) => ({
+      params: { slug: routes[pageKey][locale].replace(/^\/|\/$/g, '') || undefined },
+      props: { pageKey, locale },
+    })),
+  )) satisfies GetStaticPaths;
+
+interface Props {
+  pageKey: PageKey;
+  locale: Locale;
+}
+
+const pages = {
+  home: HomePage,
+  couples: CouplesPage,
+  coaching: CoachingPage,
+  about: AboutPage,
+  faq: FaqPage,
+  contact: ContactPage,
+} satisfies Record<PageKey, unknown>;
+
+const { pageKey, locale } = Astro.props;
+const Page = pages[pageKey];
+---
+
+<Page {locale} />

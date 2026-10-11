@@ -1,0 +1,1117 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+/*
+ * Colours by role, all from the Tailwind palette. Add no others; the one exception is the card shadow,
+ * a translucent dark blue-grey.
+ * - Sand: orange-50 for the page and the hero (the hero photo fades into it),
+ *   orange-100 for the large sections, the wave, the closing section and the footer.
+ * - White for cards and icon tiles. Body text is stone-800, footer text stone-600.
+ * - Sky: 900 for the wordmark and headings; 800 for text links (including the email and phone
+ *   links), icons and focus; 200 only for the fill layer of duotone icons.
+ * - Orange marks the calls to action and the small accents: 700 for filled buttons, the Kontakt
+ *   button and eyebrows, 800 as button hover, 600 for the nav underline and the active-language and
+ *   menu markers.
+ * - rule (hairlines), edge (card borders) and field (form field borders, 3:1 on white) are
+ *   translucent sky-900.
+ */
+@theme {
+  --color-*: initial;
+  --color-white: #fff;
+  --color-orange-50: oklch(98% 0.016 73.684);
+  --color-orange-100: oklch(95.4% 0.038 75.164);
+  --color-stone-600: oklch(44.4% 0.011 73.639);
+  --color-stone-800: oklch(26.8% 0.007 34.298);
+  --color-orange-600: oklch(64.6% 0.222 41.116);
+  --color-orange-700: oklch(55.3% 0.195 38.402);
+  --color-orange-800: oklch(47% 0.157 37.304);
+  --color-sky-200: oklch(90.1% 0.058 230.902);
+  --color-sky-800: oklch(44.3% 0.11 240.79);
+  --color-sky-900: oklch(39.1% 0.09 240.876);
+  --color-rule: rgb(2 74 112 / 0.18);
+  --color-edge: rgb(2 74 112 / 0.1);
+  --color-field: rgb(2 74 112 / 0.6);
+}
+
+@layer base {
+  :root {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --nav-h: 84px;
+    --wave-h: 90px;
+    --content: 84rem;
+  }
+
+  @media (width <= 860px) {
+    :root {
+      --nav-h: 64px;
+      --wave-h: 50px;
+    }
+  }
+
+  html {
+    background: var(--color-orange-50);
+    color: var(--color-stone-800);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  body:lang(zh) {
+    line-height: 1.8;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+  }
+
+  :is(a, button, summary, input, textarea):focus-visible {
+    outline: 2px solid var(--color-sky-800);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .wrap {
+    width: 100%;
+    max-width: calc(var(--content) + 2 * var(--gutter));
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  .skip-link {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 10;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    background: var(--color-white);
+    color: var(--color-sky-800);
+    font-weight: 600;
+    transform: translateY(-200%);
+  }
+
+  .skip-link:focus-visible {
+    transform: none;
+  }
+
+  /*
+   * Nav
+   */
+  .topbar {
+    position: relative;
+    z-index: 3;
+    border-bottom: 1px solid var(--color-rule);
+    background: var(--color-orange-50);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    height: var(--nav-h);
+  }
+
+  .wordmark {
+    margin-right: auto;
+    color: var(--color-sky-900);
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  .links {
+    display: flex;
+    gap: 1.4rem;
+    font-size: 0.95rem;
+  }
+
+  .links a {
+    padding-bottom: 2px;
+    background: linear-gradient(var(--color-orange-600), var(--color-orange-600)) 0 100% / 0 2px no-repeat;
+    text-decoration: none;
+    transition: background-size 0.35s ease;
+  }
+
+  .links a:hover,
+  .links a:focus-visible,
+  .links a[aria-current='page'] {
+    background-size: 100% 2px;
+  }
+
+  .langs {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+  }
+
+  .langs svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-right: 0.2rem;
+    color: var(--color-sky-800);
+  }
+
+  /* A hairline and the globe set the languages apart from the page links beside them. */
+  .nav > .langs {
+    padding-left: 1.25rem;
+    border-left: 1px solid var(--color-rule);
+  }
+
+  .langs > :is(a, span) {
+    padding: 0.3rem 0.45rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    text-decoration: none;
+    opacity: 0.55;
+  }
+
+  .langs a:hover {
+    opacity: 1;
+  }
+
+  .langs [aria-current] {
+    opacity: 1;
+  }
+
+  .nav-cta {
+    padding: 0.55rem 1.1rem;
+    border: 1px solid currentColor;
+    border-radius: 10px;
+    color: var(--color-orange-700);
+    font-size: 0.95rem;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  /* Below 1180px the page links move into this disclosure; the inline list and the menu are both always rendered. */
+  .menu {
+    display: none;
+  }
+
+  .menu summary {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin-right: -10px;
+    color: var(--color-sky-800);
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .menu summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .menu summary svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .menu-panel {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    border-bottom: 1px solid var(--color-rule);
+    background: var(--color-orange-50);
+  }
+
+  .menu-panel .wrap {
+    padding-top: 0.5rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .menu-panel li a {
+    display: block;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--color-rule);
+    text-decoration: none;
+  }
+
+  .langs [aria-current],
+  .menu-panel li a:hover,
+  .menu-panel li a[aria-current='page'] {
+    text-decoration: underline;
+    text-decoration-color: var(--color-orange-600);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.35em;
+  }
+
+  .menu-panel .langs {
+    display: none;
+    margin-top: 1rem;
+  }
+
+  /*
+   * Hero: the photo is scaled so her head lines up with the top of the text block and her
+   * silhouette's right edge with the content column's right edge.
+   */
+  .hero {
+    /* Geometry of the hero photo's 4500×2600 master: head top, silhouette right edge and centre. */
+    --photo-w: 4500;
+    --photo-h: 2600;
+    --head-top: 750;
+    --silhouette-right: 2850;
+    --silhouette-centre: 2183;
+    --text-w: 35rem;
+
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr auto 1fr var(--wave-h);
+    height: clamp(560px, calc(100svh - var(--nav-h)), 860px);
+    overflow: hidden;
+    background: var(--color-orange-50);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  /* The photo box spans from the top of the hero text to the bottom of the hero, inside the content column. */
+  .hero-media {
+    position: relative;
+    z-index: 0;
+    grid-row: 2 / -1;
+    grid-column: 1;
+  }
+
+  .hero-media .anchor {
+    position: relative;
+    height: 100%;
+    container-type: size;
+  }
+
+  /*
+   * The photo has no fade of its own: this mask fades it into the hero background along a smoothstep curve
+   * (stops at a quarter, half and three quarters). The left fade is as long as 22% of the photo. Side by side,
+   * it ends at 22%, or 3rem past the text column if that is further right, so at medium widths the text stays
+   * on sand. The right edge fades over the photo's last 8%.
+   */
+  .hero-media img {
+    --img-h: calc(100cqh * var(--photo-h) / (var(--photo-h) - var(--head-top)));
+    --img-w: calc(var(--img-h) * var(--photo-w) / var(--photo-h));
+    --img-left: calc(
+      100cqw + var(--img-h) * (var(--photo-w) - var(--silhouette-right)) / var(--photo-h) - var(--img-w)
+    );
+    --fade: calc(var(--img-w) * 0.22);
+    --fade-end: max(var(--fade), var(--text-w) + 3rem - var(--img-left));
+
+    position: absolute;
+    right: calc(-1 * var(--img-h) * (var(--photo-w) - var(--silhouette-right)) / var(--photo-h));
+    bottom: 0;
+    width: auto;
+    max-width: none;
+    height: var(--img-h);
+    mask-image: linear-gradient(
+      to right,
+      transparent calc(var(--fade-end) - var(--fade)),
+      rgb(0 0 0 / 0.16) calc(var(--fade-end) - var(--fade) * 0.75),
+      rgb(0 0 0 / 0.5) calc(var(--fade-end) - var(--fade) * 0.5),
+      rgb(0 0 0 / 0.84) calc(var(--fade-end) - var(--fade) * 0.25),
+      black var(--fade-end),
+      black 92%,
+      rgb(0 0 0 / 0.84) 94%,
+      rgb(0 0 0 / 0.5) 96%,
+      rgb(0 0 0 / 0.16) 98%,
+      transparent
+    );
+  }
+
+  .hero-text {
+    max-width: var(--text-w);
+  }
+
+  .role,
+  .eyebrow {
+    color: var(--color-orange-700);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  :lang(zh) :is(.role, .eyebrow) {
+    letter-spacing: 0.3em;
+  }
+
+  .role {
+    margin-bottom: 1.1rem;
+  }
+
+  .eyebrow {
+    margin-bottom: 0.9rem;
+  }
+
+  .brand {
+    color: var(--color-sky-900);
+    font-size: clamp(3.2rem, 7vw, 6.4rem);
+    line-height: 0.95;
+    letter-spacing: -0.015em;
+    white-space: nowrap;
+  }
+
+  .claim {
+    margin-top: 1.4rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.1vw, 1.75rem);
+    line-height: 1.25;
+  }
+
+  .sub {
+    max-width: 30rem;
+    margin-top: 1.1rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.95rem 1.6rem;
+    border-radius: 10px;
+    background: var(--color-orange-700);
+    color: var(--color-white);
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      transform 0.25s ease,
+      background-color 0.25s ease;
+  }
+
+  .btn:hover {
+    background: var(--color-orange-800);
+    transform: translateY(-2px);
+  }
+
+  .call {
+    padding-bottom: 1px;
+    border-bottom: 1px solid currentColor;
+    color: var(--color-sky-800);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .wave {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: var(--wave-h);
+    color: var(--color-orange-100);
+  }
+
+  /*
+   * Page head of the inner pages: a neutral band that ends in the wave, like the hero.
+   */
+  .page-head {
+    position: relative;
+    padding: clamp(3rem, 7vw, 6rem) 0 calc(var(--wave-h) + clamp(2rem, 5vw, 4rem));
+  }
+
+  .page-head .wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: center;
+  }
+
+  .page-head h1 {
+    color: var(--color-sky-900);
+    font-size: clamp(2.6rem, 5.5vw, 4.6rem);
+    line-height: 1.02;
+  }
+
+  .page-head .credentials {
+    margin-top: 1rem;
+    color: var(--color-sky-800);
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+  }
+
+  .page-head .lead {
+    max-width: 36rem;
+    margin-top: 1.4rem;
+    font-size: 1.15rem;
+  }
+
+  .photo {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 18px;
+    aspect-ratio: 3 / 2;
+    background: var(--color-orange-100);
+  }
+
+  .photo.portrait {
+    max-width: 26rem;
+    aspect-ratio: 4 / 5;
+  }
+
+  .photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /*
+   * Sections
+   */
+  .section {
+    padding: clamp(4rem, 8vw, 7rem) 0;
+  }
+
+  .tint {
+    padding: clamp(3rem, 7vw, 6rem) 0 clamp(4rem, 9vw, 8rem);
+    background: var(--color-orange-100);
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: start;
+  }
+
+  .two-col h2 {
+    color: var(--color-sky-900);
+    font-size: clamp(2.2rem, 4.4vw, 3.6rem);
+    line-height: 1.05;
+  }
+
+  .text {
+    max-width: 38rem;
+  }
+
+  .text p + p {
+    margin-top: 1rem;
+  }
+
+  :is(.text a, .inquiry a, .more) {
+    color: var(--color-sky-800);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.3em;
+  }
+
+  .more-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .rec-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--color-rule);
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+    line-height: 1.4;
+  }
+
+  .rec-list li:last-child {
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  /* White cards: the one surface for grouped content (topics, prices, icon lists, FAQ, offers, the form). */
+  .card {
+    border: 1px solid var(--color-edge);
+    border-radius: 18px;
+    background: var(--color-white);
+    box-shadow:
+      0 1px 2px rgb(31 44 58 / 0.05),
+      0 14px 32px -18px rgb(31 44 58 / 0.25);
+  }
+
+  .icon-list {
+    padding: 0.25rem clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .icon-list li {
+    display: flex;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.4rem 0;
+  }
+
+  .icon-list li + li {
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .icon-list h3 {
+    margin-bottom: 0.3rem;
+    color: var(--color-sky-900);
+    font-size: 1.3rem;
+    line-height: 1.25;
+  }
+
+  /* Icons sit on the first line of their text, so rows of any length line up the same way. */
+  :is(.rec-list, .icon-list) .icon-tile {
+    margin-top: calc((1lh - 3rem) / 2);
+  }
+
+  .icon-tile {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 12px;
+    background: var(--color-white);
+    color: var(--color-sky-800);
+  }
+
+  /* On a white card, a white tile would disappear; there it gets a sand fill and a fine frame. */
+  .card .icon-tile {
+    border: 1px solid var(--color-edge);
+    background: var(--color-orange-50);
+  }
+
+  .icon-tile svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  /* Duotone fill layer, one hue for every icon. */
+  :is(.icon-tile, .note) svg [opacity] {
+    fill: var(--color-sky-200);
+    opacity: 0.7;
+  }
+
+  .offer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .offer {
+    overflow: hidden;
+  }
+
+  .offer .photo {
+    border-radius: 0;
+  }
+
+  .offer-body {
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+  }
+
+  .offer h3 {
+    color: var(--color-sky-900);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.1;
+  }
+
+  .offer p {
+    max-width: 32rem;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .more::after {
+    display: inline-block;
+    margin-left: 0.3em;
+    content: '→';
+    transition: transform 0.25s ease;
+  }
+
+  .more:hover::after {
+    transform: translateX(4px);
+  }
+
+  .section-head {
+    max-width: 40rem;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .section-head :is(h1, h2) {
+    color: var(--color-sky-900);
+    font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+    line-height: 1.05;
+  }
+
+  .section-head h1 + p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 2.5vw, 1.75rem);
+  }
+
+  .topic {
+    padding: clamp(1.5rem, 2.5vw, 2rem);
+  }
+
+  @media (width >= 1180px) {
+    .topic-grid.four {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .topic h3 {
+    margin-top: 1.1rem;
+    color: var(--color-sky-900);
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+
+  .topic .eyebrow {
+    margin: 1.1rem 0 0;
+  }
+
+  .topic .eyebrow + h3 {
+    margin-top: 0.3rem;
+  }
+
+  .topic p {
+    margin-top: 0.6rem;
+  }
+
+  .note {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    max-width: 48rem;
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: 0.95rem;
+  }
+
+  .note > svg {
+    flex: none;
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-top: calc((1lh - 1.3rem) / 2);
+    color: var(--color-sky-800);
+  }
+
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: clamp(1rem, 2.5vw, 1.75rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+
+  .price-card {
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+  }
+
+  .price-card h3 {
+    margin-bottom: 1.25rem;
+    color: var(--color-sky-900);
+    font-size: clamp(1.35rem, 2vw, 1.6rem);
+    line-height: 1.15;
+  }
+
+  .price-card div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .price-card dd {
+    color: var(--color-sky-900);
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  }
+
+  .faq {
+    max-width: 56rem;
+    padding: 0 clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .faq details + details {
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .faq summary {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 1.7vw, 1.35rem);
+    line-height: 1.35;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .faq summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq summary svg {
+    flex: none;
+    width: 1.4rem;
+    height: 1.4rem;
+    color: var(--color-sky-800);
+    transition: transform 0.25s ease;
+  }
+
+  .faq details[open] summary svg {
+    transform: rotate(45deg);
+  }
+
+  .faq .text {
+    padding-bottom: 1.5rem;
+  }
+
+  .closing {
+    padding: clamp(4.5rem, 10vw, 9rem) 0;
+    background: var(--color-orange-100);
+  }
+
+  /* After a tinted (orange-100) section, the closing takes the page's orange-50 so the two never merge. */
+  .tint + .closing {
+    background: var(--color-orange-50);
+  }
+
+  .closing h2 {
+    color: var(--color-sky-900);
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    line-height: 1.05;
+  }
+
+  .closing p {
+    max-width: 34rem;
+    margin: 1.25rem 0 2.25rem;
+    font-size: 1.1rem;
+  }
+
+  .inquiry {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .inquiry label {
+    display: grid;
+    gap: 0.4rem;
+    color: var(--color-sky-900);
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .inquiry :is(input, textarea) {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--color-field);
+    border-radius: 10px;
+    background: var(--color-orange-50);
+    color: var(--color-stone-800);
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .inquiry textarea {
+    resize: vertical;
+  }
+
+  .inquiry .wide {
+    grid-column: 1 / -1;
+  }
+
+  /* Honeypot: hidden from people, filled in by bots. */
+  .inquiry .trap {
+    position: absolute;
+    left: -100vw;
+  }
+
+  .inquiry .hint {
+    color: var(--color-stone-600);
+    font-size: 0.9rem;
+  }
+
+  .form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    align-items: center;
+  }
+
+  .inquiry .btn {
+    cursor: pointer;
+  }
+
+  .inquiry .btn:disabled {
+    cursor: progress;
+    opacity: 0.6;
+    transform: none;
+  }
+
+  .inquiry + .contact-lines {
+    margin-top: 2.5rem;
+  }
+
+  .contact-lines {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 3rem;
+  }
+
+  .contact-lines + .rec-list {
+    margin-top: 2.5rem;
+  }
+
+  .big-link {
+    padding-bottom: 4px;
+    background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+    color: var(--color-sky-800);
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 3vw, 2.4rem);
+    text-decoration: none;
+    transition: background-size 0.4s ease;
+  }
+
+  .big-link:hover {
+    background-position: 100% 100%;
+    background-size: 0 1px;
+  }
+
+  .legal {
+    padding-top: clamp(3rem, 7vw, 6rem);
+    padding-bottom: clamp(4rem, 8vw, 7rem);
+  }
+
+  .foot {
+    border-top: 1px solid var(--color-rule);
+    background: var(--color-orange-100);
+    color: var(--color-stone-600);
+    font-size: 0.85rem;
+  }
+
+  .foot .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .foot a {
+    text-decoration: none;
+  }
+
+  .foot a:hover {
+    text-decoration: underline;
+  }
+
+  .foot span {
+    margin-left: auto;
+  }
+
+  @media (width < 1180px) {
+    .links {
+      display: none;
+    }
+
+    .nav > .langs {
+      padding-left: 0;
+      border-left: 0;
+    }
+
+    .menu {
+      display: block;
+    }
+
+    .hero-text {
+      max-width: 28rem;
+    }
+
+    /* Below 1180px the photo sits above the text: 24px headroom above her head, centred on her silhouette. */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      padding-bottom: var(--wave-h);
+    }
+
+    .hero-media {
+      order: -1;
+      width: 100%;
+      max-width: none;
+      max-height: 58svh;
+      padding: 0;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+    }
+
+    .hero-media .anchor {
+      width: 100%;
+    }
+
+    .hero-media img {
+      --img-h: calc((100cqh - 24px) * var(--photo-h) / (var(--photo-h) - var(--head-top)));
+      --fade-end: var(--fade);
+
+      right: auto;
+      left: calc(50cqw - var(--img-h) * var(--silhouette-centre) / var(--photo-h));
+    }
+
+    /* Opaque at the bottom, so this fade cannot band. */
+    .hero-media::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 70%, var(--color-orange-50) 100%);
+      content: '';
+    }
+
+    .hero-inner {
+      margin-top: -1.5rem;
+    }
+
+    .topic-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (width <= 860px) {
+    .page-head .wrap,
+    .two-col,
+    .offer-grid,
+    .topic-grid,
+    .price-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (width <= 520px) {
+    /* Long German compounds would overflow the narrow column; desktop line breaks stay untouched. */
+    :is(h1, h2, h3) {
+      hyphens: auto;
+    }
+
+    .nav {
+      gap: 0.5rem;
+    }
+
+    .wordmark {
+      font-size: 1.15rem;
+    }
+
+    .nav > .langs {
+      display: none;
+    }
+
+    .menu-panel .langs {
+      display: flex;
+    }
+
+    .nav-cta {
+      padding: 0.45rem 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .inquiry {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /*
+   * Motion. Everything starts visible; the entrance states apply only with JS and without a reduced-motion preference.
+   */
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .hero-text > * {
+      animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    }
+
+    html.js .hero-text > :nth-child(2) {
+      animation-delay: 0.08s;
+    }
+
+    html.js .hero-text > :nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    html.js .hero-text > :nth-child(4) {
+      animation-delay: 0.32s;
+    }
+
+    html.js .hero-text > :nth-child(5) {
+      animation-delay: 0.44s;
+    }
+
+    html.js .hero-media img {
+      animation: settle 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes settle {
+    from {
+      opacity: 0;
+      transform: scale(1.035);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/*
+ * Legal page bodies. These overrides are unlayered on purpose: the typography plugin emits its
+ * `.prose` styles into the `utilities` layer, so a layered override would lose on layer order.
+ */
+.prose {
+  --tw-prose-body: var(--color-stone-800);
+  --tw-prose-headings: var(--color-sky-900);
+  --tw-prose-bold: var(--color-stone-800);
+  --tw-prose-links: var(--color-sky-800);
+  --tw-prose-bullets: var(--color-sky-800);
+  --tw-prose-hr: var(--color-rule);
+}
+
+.prose :is(h1, h2, h3) {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+.prose h1 {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1.05;
+  hyphens: auto;
+}

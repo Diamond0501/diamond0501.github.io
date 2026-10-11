@@ -1,0 +1,42 @@
+---
+import { Picture } from 'astro:assets';
+import heroPhoto from '../assets/hero/yiting-chen-hero.jpg';
+import { site, type Locale } from '../data/site';
+import type { HomeContent } from '../data/pages/home';
+import CallToAction from './CallToAction.astro';
+import Wave from './Wave.astro';
+
+interface Props {
+  locale: Locale;
+  content: HomeContent['hero'];
+}
+
+const { locale, content } = Astro.props;
+---
+
+<section class="hero">
+  <div class="hero-inner wrap">
+    <div class="hero-text">
+      <p class="role">{content.role}</p>
+      <h1 class="brand">{site.name}</h1>
+      <p class="claim">{content.claim}</p>
+      <p class="sub">{content.sub}</p>
+      <CallToAction {locale} />
+    </div>
+  </div>
+  <div class="hero-media wrap">
+    <div class="anchor">
+      {/* The rendered width follows the box height, not the viewport width: about 2.4× the viewport on phones. */}
+      <Picture
+        src={heroPhoto}
+        formats={['avif', 'webp']}
+        widths={[900, 1400, 2000, 2800]}
+        sizes="(max-width: 860px) 245vw, 1800px"
+        alt={content.photoAlt}
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+  </div>
+  <Wave />
+</section>

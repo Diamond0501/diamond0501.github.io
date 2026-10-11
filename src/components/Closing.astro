@@ -1,0 +1,20 @@
+---
+import type { Locale } from '../data/site';
+import { ui } from '../i18n/ui';
+import CallToAction from './CallToAction.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = ui[locale];
+---
+
+<section class="closing">
+  <div class="wrap">
+    <h2>{t.closing.title}</h2>
+    <p>{t.closing.text}</p>
+    <CallToAction {locale} />
+  </div>
+</section>

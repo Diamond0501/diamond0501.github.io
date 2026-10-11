@@ -1,0 +1,24 @@
+---
+import Wave from './Wave.astro';
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  lead: string;
+}
+
+const { eyebrow, title, lead } = Astro.props;
+---
+
+<section class="page-head">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">{eyebrow}</p>
+      <h1>{title}</h1>
+      <slot name="credentials" />
+      <p class="lead">{lead}</p>
+    </div>
+    <slot />
+  </div>
+  <Wave />
+</section>
