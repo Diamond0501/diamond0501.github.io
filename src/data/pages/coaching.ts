@@ -79,21 +79,18 @@ export const coaching: Record<Locale, ServiceContent> = {
       items: [
         {
           icon: 'compass',
-          label: 'Sitzung 1',
           title: 'Erstgespräch',
-          text: 'Wir klären Ihr Anliegen und was Sie sich vom Coaching konkret wünschen.',
+          text: 'Wir klären Ihr Anliegen und besprechen, was Sie sich vom Coaching ganz konkret wünschen.',
         },
         {
           icon: 'magnifying-glass',
-          label: 'Etwa Sitzung 2–5',
           title: 'Erarbeiten',
-          text: 'Mit passenden Methoden schauen wir genauer hin und finden neue Sichtweisen.',
+          text: 'Mit passenden Methoden schauen wir gemeinsam genauer hin und finden neue Sichtweisen.',
         },
         {
           icon: 'plant',
-          label: 'Etwa Sitzung 6–8',
           title: 'Umsetzen',
-          text: 'Sie setzen erste Schritte im Alltag um, und wir festigen, was Ihnen hilft.',
+          text: 'Sie setzen erste Schritte in Ihrem Alltag um, und wir festigen, was Ihnen dabei wirklich hilft.',
         },
       ],
     },
@@ -176,21 +173,18 @@ export const coaching: Record<Locale, ServiceContent> = {
       items: [
         {
           icon: 'compass',
-          label: 'Session 1',
           title: 'First session',
-          text: 'We clarify what brings you and what exactly you hope for from coaching.',
+          text: 'We clarify what brings you here and what exactly you are hoping to get from coaching.',
         },
         {
           icon: 'magnifying-glass',
-          label: 'About sessions 2–5',
           title: 'Working through',
-          text: 'With suitable methods we take a closer look and find new perspectives.',
+          text: 'With methods that suit you, we take a closer look together and find new perspectives.',
         },
         {
           icon: 'plant',
-          label: 'About sessions 6–8',
           title: 'Taking steps',
-          text: 'You take first steps in everyday life, and we consolidate what helps you.',
+          text: 'You take first steps in your everyday life, and we consolidate what really helps you.',
         },
       ],
     },
@@ -272,19 +266,16 @@ export const coaching: Record<Locale, ServiceContent> = {
       items: [
         {
           icon: 'compass',
-          label: '第 1 次',
           title: '首次咨询',
           text: '我们明确您的议题以及您对教练的期望，并一起确定目标。',
         },
         {
           icon: 'magnifying-glass',
-          label: '约第 2–5 次',
           title: '澄清与探索',
           text: '借助合适的方法，我们深入观察，并找到新的视角。',
         },
         {
           icon: 'plant',
-          label: '约第 6–8 次',
           title: '实践与巩固',
           text: '您在日常中迈出第一步，我们巩固对您有帮助的做法。',
         },

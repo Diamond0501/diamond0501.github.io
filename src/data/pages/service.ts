@@ -8,15 +8,8 @@ export interface ServiceContent {
   approach: { items: { icon: string; title: string; text: string }[] };
   topics: { title: string; items: { icon: string; title: string; text: string }[] };
   // The steps after the intro call (the intro call itself is shared, below).
-  process: { items: ProcessStep[] };
+  process: { items: { icon: string; title: string; text: string }[] };
   prices: { title: string; rates: Rate[] }[];
-}
-
-export interface ProcessStep {
-  icon: string;
-  label: string;
-  title: string;
-  text: string;
 }
 
 export interface Rate {
@@ -38,7 +31,7 @@ export const individualRates: Rate[] = [
 interface SharedServiceContent {
   approach: { title: string };
   topics: { eyebrow: string };
-  process: { eyebrow: string; title: string; intro: ProcessStep; note: string };
+  process: { eyebrow: string; title: string; intro: { icon: string; title: string; text: string } };
   online: { eyebrow: string; title: string; items: { icon: string; text: string }[] };
   fees: {
     eyebrow: string;
@@ -59,11 +52,9 @@ export const service: Record<Locale, SharedServiceContent> = {
       title: 'So läuft es ab',
       intro: {
         icon: 'phone',
-        label: 'Vorab, 15 Minuten',
-        title: 'Kennenlernen',
-        text: 'Ein kostenfreies Telefonat: Wir lernen uns kennen und klären, ob es passt.',
+        title: 'Kennenlerngespräch',
+        text: 'Ein kostenfreies Telefonat von 15 Minuten: Wir lernen uns kennen und klären, ob es passt.',
       },
-      note: 'Die Zahlen sind Richtwerte. Wie viele Sitzungen Sie brauchen, hängt von Ihrem Anliegen ab.',
     },
     online: {
       eyebrow: 'Online',
@@ -102,11 +93,11 @@ export const service: Record<Locale, SharedServiceContent> = {
         },
         {
           icon: 'calendar-x',
-          text: 'Bitte sagen Sie mindestens 24 Stunden vorher ab, sonst berechne ich eine Ausfallgebühr von 100 €.',
+          text: 'Bitte sagen Sie mindestens 24 Stunden vorher ab, sonst fällt eine Ausfallgebühr von 100 € an.',
         },
         {
           icon: 'tag',
-          text: 'Alle Preise sind Endpreise. Als Kleinunternehmerin nach § 19 UStG berechne ich keine Umsatzsteuer.',
+          text: 'Alle Preise sind Endpreise. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.',
         },
       ],
       termsLink: 'Zu den AGB',
@@ -121,11 +112,9 @@ export const service: Record<Locale, SharedServiceContent> = {
       title: 'How it works',
       intro: {
         icon: 'phone',
-        label: 'Beforehand, 15 minutes',
         title: 'Intro call',
-        text: 'A free phone call: we get to know each other and see whether it is a good fit.',
+        text: 'A free 15-minute phone call: we get to know each other and see whether it is a good fit.',
       },
-      note: 'These numbers are estimates. How many sessions you need depends on what you bring.',
     },
     online: {
       eyebrow: 'Online',
@@ -164,11 +153,11 @@ export const service: Record<Locale, SharedServiceContent> = {
         },
         {
           icon: 'calendar-x',
-          text: 'Please cancel at least 24 hours in advance; otherwise I charge a cancellation fee of €100.',
+          text: 'Please cancel at least 24 hours in advance. Later cancellations incur a fee of €100.',
         },
         {
           icon: 'tag',
-          text: 'All prices are final prices. As a small business under § 19 of the German VAT Act (UStG), I do not charge VAT.',
+          text: 'All prices are final prices. Under the small business rule in § 19 of the German VAT Act (UStG), no VAT is charged.',
         },
       ],
       termsLink: 'Terms and conditions (in German)',
@@ -183,11 +172,9 @@ export const service: Record<Locale, SharedServiceContent> = {
       title: '咨询如何进行',
       intro: {
         icon: 'phone',
-        label: '事先，15 分钟',
-        title: '初次了解',
-        text: '免费电话交谈：我们彼此认识，并看看合作是否合适。',
+        title: '初次了解谈话',
+        text: '15 分钟的免费电话交谈：我们彼此认识，并看看合作是否合适。',
       },
-      note: '以上次数仅供参考。您需要多少次咨询取决于具体议题。',
     },
     online: {
       eyebrow: '线上',

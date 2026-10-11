@@ -16,7 +16,7 @@ export const about: Record<Locale, AboutContent> = {
     head: {
       eyebrow: 'Über mich',
       credentials: 'Psychologin (M.Sc.), Paartherapeutin & Coach',
-      lead: 'Ich begleite Paare und Einzelne dabei, ihre Beziehung besser zu verstehen und wieder zueinanderzufinden – warmherzig, strukturiert und auf Augenhöhe.',
+      lead: 'Ich begleite Paare und Einzelne dabei, ihre Beziehung besser zu verstehen und wieder zueinanderzufinden – empathisch, strukturiert und auf Augenhöhe.',
       portraitAlt: 'Porträt von Yiting Chen',
     },
     path: {
@@ -62,7 +62,7 @@ export const about: Record<Locale, AboutContent> = {
     head: {
       eyebrow: 'About',
       credentials: 'Psychologist (M.Sc.), couples therapist & coach',
-      lead: 'I support couples and individuals in understanding their relationship better and finding their way back to each other – warmly, in a structured way and on equal footing.',
+      lead: 'I support couples and individuals in understanding their relationship better and finding their way back to each other – with empathy, in a structured way and on equal footing.',
       portraitAlt: 'Portrait of Yiting Chen',
     },
     path: {
@@ -107,7 +107,7 @@ export const about: Record<Locale, AboutContent> = {
     head: {
       eyebrow: '关于我',
       credentials: '心理学硕士（M.Sc.）、伴侣治疗师与教练',
-      lead: '我陪伴伴侣和个人更好地理解彼此的关系，重新走近对方——温暖、有条理，并且平等相待。',
+      lead: '我陪伴伴侣和个人更好地理解彼此的关系，重新走近对方——富有同理心、有条理，并且平等相待。',
       portraitAlt: 'Yiting Chen 的肖像',
     },
     path: {

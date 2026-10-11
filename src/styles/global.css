@@ -6,7 +6,8 @@
  * a translucent dark blue-grey.
  * - Sand: orange-50 for the page and the hero (the hero photo fades into it),
  *   orange-100 for the large sections, the wave, the closing section and the footer.
- * - White for cards and icon tiles. Body text is stone-800, footer text stone-600.
+ * - White for cards and icon tiles. Body text is stone-800. Small secondary text (the footer, the
+ *   note under the call to action, form hints) is stone-600.
  * - Sky: 900 for the wordmark and headings; 800 for text links (including the email and phone
  *   links), icons and focus; 200 only for the fill layer of duotone icons.
  * - Orange marks the calls to action and the small accents: 700 for filled buttons, the Kontakt
@@ -335,8 +336,8 @@
     max-width: var(--text-w);
   }
 
-  .role,
   .eyebrow {
+    margin-bottom: 0.9rem;
     color: var(--color-orange-700);
     font-size: 0.85rem;
     font-weight: 600;
@@ -344,16 +345,8 @@
     text-transform: uppercase;
   }
 
-  :lang(zh) :is(.role, .eyebrow) {
+  :lang(zh) .eyebrow {
     letter-spacing: 0.3em;
-  }
-
-  .role {
-    margin-bottom: 1.1rem;
-  }
-
-  .eyebrow {
-    margin-bottom: 0.9rem;
   }
 
   .brand {
@@ -409,6 +402,15 @@
     font-size: 0.95rem;
     font-weight: 600;
     text-decoration: none;
+  }
+
+  :is(.cta-note, .inquiry .hint) {
+    color: var(--color-stone-600);
+    font-size: 0.9rem;
+  }
+
+  .cta-note {
+    margin-top: 0.9rem;
   }
 
   .wave {
@@ -634,6 +636,10 @@
     margin: 1rem 0 1.5rem;
   }
 
+  .offer .rec-list {
+    margin-bottom: 1.75rem;
+  }
+
   .more::after {
     display: inline-block;
     margin-left: 0.3em;
@@ -671,25 +677,11 @@
     padding: clamp(1.5rem, 2.5vw, 2rem);
   }
 
-  @media (width >= 1180px) {
-    .topic-grid.four {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-  }
-
   .topic h3 {
     margin-top: 1.1rem;
     color: var(--color-sky-900);
     font-size: 1.35rem;
     line-height: 1.2;
-  }
-
-  .topic .eyebrow {
-    margin: 1.1rem 0 0;
-  }
-
-  .topic .eyebrow + h3 {
-    margin-top: 0.3rem;
   }
 
   .topic p {
@@ -804,7 +796,7 @@
     line-height: 1.05;
   }
 
-  .closing p {
+  .closing h2 + p {
     max-width: 34rem;
     margin: 1.25rem 0 2.25rem;
     font-size: 1.1rem;
@@ -848,11 +840,6 @@
   .inquiry .trap {
     position: absolute;
     left: -100vw;
-  }
-
-  .inquiry .hint {
-    color: var(--color-stone-600);
-    font-size: 0.9rem;
   }
 
   .form-actions {

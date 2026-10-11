@@ -12,9 +12,10 @@ const { locale } = Astro.props;
 
 <div class="actions">
   <a class="btn" href={`${pathFor('contact', locale)}#anfrage`}>
-    {ui[locale].cta}
+    {ui[locale].cta.label}
   </a>
   <a class="call" href={site.phone.href}>
-    {ui[locale].call}
+    {ui[locale].cta.call}
   </a>
 </div>
+<p class="cta-note">{ui[locale].cta.note}</p>

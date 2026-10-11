@@ -46,7 +46,9 @@ The pre-commit hook runs ESLint and Prettier on staged files and blocks the comm
 - Unresolved content renders the literal marker `TODO` (e.g. `TODO(yiting): …`). `pnpm check:launch` fails on it, and CI runs it before deploying, so nothing ships with a placeholder
 - Her titles are "Psychologin (M.Sc.), Paartherapeutin & Coach" ("Coach", never "Coachin"). The provider name is "Yiting Chen, Paartherapie & Coaching" on one line, as on her letterhead
 - `src/data/site.ts`: name, contact details, contact form URL, OG image, locales and their `lang` tags
+- The two offers read as clearly different. Paartherapie copy uses therapy vocabulary (patterns, feelings, closeness, trust), Coaching copy the vocabulary of goals, methods and next steps. The process steps name no session counts; the FAQ answers how many sessions it takes
 - Legal pages are Markdown with `layout: ../layouts/MarkdownPageLayout.astro`
+- Content pages speak as "ich". The legal pages and the price conditions do not: the AGB use the third person ("die Anbieterin", defined in § 1) and address the client as "Sie", the Datenschutz page is impersonal with "die Verantwortliche" where an actor is needed, and the Impressum is impersonal. The Widerrufsbelehrung and the Muster-Widerrufsformular keep the statutory model's wording, "wir/uns" included, because its legal protection depends on taking it over unchanged
 
 ## Layout & Components
 
@@ -57,12 +59,12 @@ The pre-commit hook runs ESLint and Prettier on staged files and blocks the comm
 - A single `src/styles/global.css`, imported once in `BaseLayout.astro`: `@theme` colour tokens, `@layer base`, `@layer components` (all component classes), and an unlayered `.prose` override block (the typography plugin emits `.prose` into the `utilities` layer, so layered overrides would lose)
 - **Colour by role**, all Tailwind colours (the default palette is cleared, so only these exist):
   - Sand: `orange-50` page and hero background (the hero photo fades into it), `orange-100` large sections, the wave, the closing section and the footer
-  - `white` for cards and icon tiles; `stone-800` body text, `stone-600` footer text
+  - `white` for cards and icon tiles; `stone-800` body text, `stone-600` small secondary text (the note under the call-to-action buttons, the form hint, the footer)
   - Blue: `sky-900` wordmark and headings; `sky-800` text links (including the email and phone links), icons and focus; `sky-200` only for the duotone fill layer of icons, the same for every icon
   - Orange for calls to action and small accents, in the sand's colour family: `orange-700` filled buttons, the Kontakt button and eyebrows, `orange-800` button hover, `orange-600` the nav underline and the active-language and menu markers. White on `orange-700` passes 4.5:1; `orange-600` is too light for text
   - `rule` (hairlines), `edge` (card borders) and `field` (form field borders, 3:1 against white) are translucent `sky-900`
   - The one colour outside the palette is the card shadow, a translucent dark blue-grey
-- **Cards**: grouped content (topic grids, price cards, the FAQ, home offers, the request form, and `IconList` for items with a heading and text) sits on the white `.card` surface. Every plain icon + text list uses `RecList` (hairline rows), never a card. Info notes (`.note`) are plain text with an icon
+- **Cards**: grouped content (topic grids, price cards, the FAQ, home offers, the request form, and `IconList` for items with a heading and text) sits on the white `.card` surface. Every plain icon + text list uses `RecList` (hairline rows) and never gets a card of its own. The home offer cards each contain one. Info notes (`.note`) are plain text with an icon
 - Adjacent sections never share a background; the footer is the one exception, set off by its hairline. Inner pages run: page head (`orange-50`, wave) → `orange-100` → `orange-50` … → closing → footer (`orange-100` with a hairline). The closing is `orange-100`, except right after an `orange-100` section, where it takes `orange-50`. The contact page has no closing
 - **Avoid translucent gradients over flat colour**: they can band. The hero photo's side fades (a CSS mask, see below) are the one accepted exception; the fade below the stacked hero photo ends opaque
 - Only the hero has an entrance animation (staggered text entrance and photo settle). Everything else is limited to short hover and open transitions. The entrance is gated on `html.js` (set by an inline head script) and `prefers-reduced-motion: no-preference`, so all content is visible without JS or with reduced motion

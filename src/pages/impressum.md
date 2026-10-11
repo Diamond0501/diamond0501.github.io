@@ -26,14 +26,14 @@ Yiting Chen, Anschrift wie oben
 
 ## Haftung für Inhalte
 
-Für eigene Inhalte auf diesen Seiten bin ich nach § 7 Abs. 1 DDG nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG bin ich jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung von Informationen nach den allgemeinen Gesetzen bleiben unberührt. Eine Haftung ist erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich; entsprechende Inhalte entferne ich dann umgehend.
+Für eigene Inhalte auf diesen Seiten besteht nach § 7 Abs. 1 DDG eine Verantwortlichkeit nach den allgemeinen Gesetzen. Nach §§ 8 bis 10 DDG besteht jedoch keine Verpflichtung, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung von Informationen nach den allgemeinen Gesetzen bleiben unberührt. Eine Haftung ist erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich; entsprechende Inhalte werden dann umgehend entfernt.
 
 ## Haftung für Links
 
-Diese Website enthält Links zu externen Websites, auf deren Inhalte ich keinen Einfluss habe. Für diese fremden Inhalte ist stets der jeweilige Anbieter verantwortlich. Zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße erkennbar. Werden mir Rechtsverletzungen bekannt, entferne ich die betreffenden Links umgehend.
+Diese Website enthält Links zu externen Websites, auf deren Inhalte kein Einfluss besteht. Für diese fremden Inhalte ist stets der jeweilige Anbieter verantwortlich. Zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße erkennbar. Werden Rechtsverletzungen bekannt, werden die betreffenden Links umgehend entfernt.
 
 ## Urheberrecht
 
-Die Inhalte dieser Website unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen meiner schriftlichen Zustimmung. Die verwendeten Stockfotos stammen von Unsplash und werden unter der Unsplash-Lizenz genutzt.
+Die Inhalte dieser Website unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung von Yiting Chen. Die verwendeten Stockfotos stammen von Unsplash und werden unter der Unsplash-Lizenz genutzt.
 
 Stand: Oktober 2026

@@ -3,14 +3,14 @@ import type { Locale } from '../site';
 export interface HomeContent {
   title: string;
   description: string;
-  hero: { role: string; claim: string; sub: string; photoAlt: string };
-  recognize: { title: string; items: { icon: string; text: string }[] };
-  offers: { couples: Offer; coaching: Offer };
+  hero: { claim: string; sub: string; photoAlt: string };
+  offers: { title: string; couples: Offer; coaching: Offer };
 }
 
 interface Offer {
   title: string;
   text: string;
+  signs: { icon: string; text: string }[];
   link: string;
 }
 
@@ -18,38 +18,44 @@ export const home: Record<Locale, HomeContent> = {
   de: {
     title: 'Paartherapie & Coaching online',
     description:
-      'Yiting Chen, Psychologin (M.Sc.): Paartherapie und Coaching online – auf Deutsch, Englisch oder Chinesisch. Psychologisch fundiert, warmherzig und auf Augenhöhe.',
+      'Yiting Chen, Psychologin (M.Sc.): Paartherapie und Coaching online – auf Deutsch, Englisch oder Chinesisch. Psychologisch fundiert, empathisch und auf Augenhöhe.',
     hero: {
-      role: 'Paartherapie & Coaching',
-      claim: 'Raum für das, was Sie bewegt – zu zweit oder allein.',
-      sub: 'Paartherapie und Coaching online – auf Deutsch, Englisch oder Chinesisch. Psychologisch fundiert, warmherzig und auf Augenhöhe.',
+      claim: 'Paartherapie & Coaching online',
+      sub: 'Psychologisch fundiert, empathisch und auf Augenhöhe – auf Deutsch, Englisch oder Chinesisch.',
       photoAlt: 'Porträt von Yiting Chen',
     },
-    recognize: {
-      title: 'Vielleicht kennen Sie das',
-      items: [
-        {
-          icon: 'arrows-clockwise',
-          text: 'Dieselben Streits kehren immer wieder – und am Ende fühlen sich beide unverstanden.',
-        },
-        {
-          icon: 'hourglass-medium',
-          text: 'Zwischen Arbeit, Kindern und Familie ist die Nähe leise verloren gegangen.',
-        },
-        { icon: 'heart-break', text: 'Nach einem Vertrauensbruch steht die Frage im Raum, wie es weitergehen kann.' },
-        { icon: 'signpost', text: 'Sie stehen vor einer Trennung oder einem Neuanfang und suchen Orientierung.' },
-        { icon: 'user', text: 'Sie möchten etwas verändern – auch wenn Sie zunächst allein beginnen.' },
-      ],
-    },
     offers: {
+      title: 'Wobei ich Sie begleite',
       couples: {
         title: 'Paartherapie',
-        text: 'Für Paare, die wiederkehrende Muster verstehen, emotionale Bedürfnisse sichtbar machen und Krisen gemeinsam bewältigen möchten.',
+        text: 'Im Mittelpunkt steht Ihre Beziehung: Muster verstehen, Bedürfnisse sichtbar machen, Krisen gemeinsam bewältigen.',
+        signs: [
+          {
+            icon: 'arrows-clockwise',
+            text: 'Dieselben Streits kehren immer wieder, und beide fühlen sich unverstanden.',
+          },
+          {
+            icon: 'hourglass-medium',
+            text: 'Zwischen Arbeit, Kindern und Familie ist die Nähe nach und nach verloren gegangen.',
+          },
+          { icon: 'heart-break', text: 'Nach einem Vertrauensbruch steht die Frage im Raum, wie es weitergehen kann.' },
+        ],
         link: 'Mehr zur Paartherapie',
       },
       coaching: {
         title: 'Coaching',
-        text: 'Einzelcoaching zu Neuorientierung, Beruf, Selbstwert und Lebensübergängen – auch zum Leben zwischen Kulturen. Für alle, die ihren Weg klarer sehen möchten.',
+        text: 'Im Mittelpunkt steht Ihr eigener Weg: Neuorientierung, Beruf, Selbstwert und das Leben zwischen Kulturen.',
+        signs: [
+          { icon: 'signpost', text: 'Sie stehen vor einer Trennung oder einem Neuanfang und suchen Orientierung.' },
+          {
+            icon: 'briefcase',
+            text: 'Ihre Arbeit passt nicht mehr zu Ihnen, aber der nächste Schritt ist noch unklar.',
+          },
+          {
+            icon: 'globe-hemisphere-west',
+            text: 'Sie leben zwischen zwei Kulturen und suchen darin Ihren eigenen Weg.',
+          },
+        ],
         link: 'Mehr zum Coaching',
       },
     },
@@ -57,35 +63,44 @@ export const home: Record<Locale, HomeContent> = {
   en: {
     title: 'Couples therapy & coaching online',
     description:
-      'Yiting Chen, psychologist (M.Sc.): couples therapy and coaching online – in German, English or Chinese. Grounded in psychology, warm and on equal footing.',
+      'Yiting Chen, psychologist (M.Sc.): couples therapy and coaching online – in German, English or Chinese. Grounded in psychology, empathetic and on equal footing.',
     hero: {
-      role: 'Couples therapy & coaching',
-      claim: 'Room for what moves you – as a couple or on your own.',
-      sub: 'Couples therapy and coaching online – in German, English or Chinese. Grounded in psychology, warm and on equal footing.',
+      claim: 'Couples therapy & coaching online',
+      sub: 'Grounded in psychology, empathetic and on equal footing – in German, English or Chinese.',
       photoAlt: 'Portrait of Yiting Chen',
     },
-    recognize: {
-      title: 'Perhaps this sounds familiar',
-      items: [
-        {
-          icon: 'arrows-clockwise',
-          text: 'The same arguments keep coming back – and both of you end up feeling misunderstood.',
-        },
-        { icon: 'hourglass-medium', text: 'Between work, children and family, closeness has quietly slipped away.' },
-        { icon: 'heart-break', text: 'After a breach of trust, you are wondering whether and how to go on together.' },
-        { icon: 'signpost', text: 'You are facing a separation or a new start and are looking for direction.' },
-        { icon: 'user', text: 'You want something to change – even if you start on your own.' },
-      ],
-    },
     offers: {
+      title: 'How I can support you',
       couples: {
         title: 'Couples therapy',
-        text: 'For couples who want to understand recurring patterns, make emotional needs visible and get through crises together.',
+        text: 'The focus is your relationship: understanding patterns, voicing needs and getting through crises.',
+        signs: [
+          {
+            icon: 'arrows-clockwise',
+            text: 'The same arguments keep coming back, and you both end up feeling unheard.',
+          },
+          {
+            icon: 'hourglass-medium',
+            text: 'Between work, children and family, closeness has gradually slipped away.',
+          },
+          {
+            icon: 'heart-break',
+            text: 'After a breach of trust, you are wondering whether and how to go on together.',
+          },
+        ],
         link: 'More about couples therapy',
       },
       coaching: {
         title: 'Coaching',
-        text: 'Coaching on new directions, work, self-worth and life transitions – also between cultures. For anyone seeking a clearer path.',
+        text: 'The focus is your own path: new directions, work, self-worth and life between cultures.',
+        signs: [
+          { icon: 'signpost', text: 'You are facing a separation or a new start and are looking for direction.' },
+          { icon: 'briefcase', text: 'Your work no longer feels right for you, but the next step is still unclear.' },
+          {
+            icon: 'globe-hemisphere-west',
+            text: 'You live between two cultures and are looking for your own way within them.',
+          },
+        ],
         link: 'More about coaching',
       },
     },
@@ -93,32 +108,32 @@ export const home: Record<Locale, HomeContent> = {
   zh: {
     title: '线上伴侣治疗与个人教练',
     description:
-      'Yiting Chen，心理学硕士：线上伴侣治疗与个人教练——可使用德语、英语或中文。以心理学为基础，温暖而平等。',
+      'Yiting Chen，心理学硕士：线上伴侣治疗与个人教练——可使用德语、英语或中文。以心理学为基础，富有同理心，平等相待。',
     hero: {
-      role: '伴侣治疗与个人教练',
-      claim: '为您心中所想留出空间——两个人一起，或独自一人。',
-      sub: '线上伴侣治疗与个人教练——可使用德语、英语或中文。以心理学为基础，温暖而平等。',
+      claim: '线上伴侣治疗与个人教练',
+      sub: '以心理学为基础，富有同理心，平等相待——可使用德语、英语或中文。',
       photoAlt: 'Yiting Chen 的肖像',
     },
-    recognize: {
-      title: '也许您也有这样的感受',
-      items: [
-        { icon: 'arrows-clockwise', text: '同样的争吵一再重演，最后双方都觉得不被理解。' },
-        { icon: 'hourglass-medium', text: '在工作、孩子和家庭之间，亲密感悄悄地流失了。' },
-        { icon: 'heart-break', text: '信任破裂之后，不知道这段关系该如何走下去。' },
-        { icon: 'signpost', text: '您正面临分离或新的开始，希望找到方向。' },
-        { icon: 'user', text: '您希望有所改变——即使先由您独自开始。' },
-      ],
-    },
     offers: {
+      title: '我能如何陪伴您',
       couples: {
         title: '伴侣治疗',
-        text: '帮助伴侣理解反复出现的互动模式，看见彼此的情感需求，共同度过危机。',
+        text: '重点是你们的关系：理解互动模式、看见彼此需求、共度危机。',
+        signs: [
+          { icon: 'arrows-clockwise', text: '同样的争吵一再重演，双方都觉得不被理解。' },
+          { icon: 'hourglass-medium', text: '工作、孩子和家庭之间，亲密感渐渐流失了。' },
+          { icon: 'heart-break', text: '信任破裂之后，不知道这段关系该如何走下去。' },
+        ],
         link: '了解伴侣治疗',
       },
       coaching: {
         title: '个人教练',
-        text: '围绕人生方向、职业、自我价值与人生转折的一对一教练，也涉及跨文化生活。适合希望更清晰地看见自己道路的您。',
+        text: '重点是您自己的道路：人生方向、职业、自我价值与跨文化生活。',
+        signs: [
+          { icon: 'signpost', text: '您正面临分离或新的开始，希望找到方向。' },
+          { icon: 'briefcase', text: '现在的工作不再适合您，但下一步还不清楚。' },
+          { icon: 'globe-hemisphere-west', text: '您生活在两种文化之间，想找到自己的路。' },
+        ],
         link: '了解个人教练',
       },
     },

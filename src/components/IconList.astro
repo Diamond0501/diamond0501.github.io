@@ -3,12 +3,14 @@ import IconTile from './IconTile.astro';
 
 interface Props {
   items: { icon: string; title: string; text: string }[];
+  ordered?: boolean;
 }
 
-const { items } = Astro.props;
+const { items, ordered = false } = Astro.props;
+const List = ordered ? 'ol' : 'ul';
 ---
 
-<ul class="icon-list card">
+<List class="icon-list card">
   {items.map((item) => (
     <li>
       <IconTile icon={item.icon} />
@@ -18,4 +20,4 @@ const { items } = Astro.props;
       </div>
     </li>
   ))}
-</ul>
+</List>

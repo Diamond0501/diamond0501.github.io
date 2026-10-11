@@ -51,16 +51,9 @@ const euros = new Intl.NumberFormat(locale, { style: 'currency', currency: 'EUR'
     </div>
   </section>
 
-  <section class="tint" id="ablauf">
-    <div class="wrap">
-      <SectionHead eyebrow={shared.process.eyebrow} title={shared.process.title} />
-      <TopicGrid items={[shared.process.intro, ...t.process.items]} four />
-      <p class="note">
-        <Icon name="ph:info-duotone" aria-hidden="true" is:inline />
-        {shared.process.note}
-      </p>
-    </div>
-  </section>
+  <SplitSection id="ablauf" eyebrow={shared.process.eyebrow} title={shared.process.title} tinted>
+    <IconList items={[shared.process.intro, ...t.process.items]} ordered />
+  </SplitSection>
 
   <SplitSection eyebrow={shared.online.eyebrow} title={shared.online.title}>
     <RecList items={shared.online.items} />
