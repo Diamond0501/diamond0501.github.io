@@ -82,9 +82,8 @@ DNS for yitingchen.de is a Cloudflare zone, managed from the delorean repo (its 
 
 1. Repository settings → Pages: set the source to **GitHub Actions**. Pages on a private repository needs a paid plan (e.g. GitHub Pro); on GitHub Free the repository must be public.
 2. Repository settings → Pages: set the custom domain to `yitingchen.de` (also in `public/CNAME`) **before** any record points at GitHub. Without domain verification in the account settings, this order is what keeps another GitHub account from claiming it.
-3. In Cloudflare, once the first deploy is live, replace the apex and `www` records and delete the `*` wildcard. All new records are **DNS only**:
-   - apex `A` records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - apex `AAAA` records: `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
+3. In Cloudflare, once the first deploy is live, point the apex and `www` at GitHub. Both records are **DNS only**:
+   - apex `CNAME` to `diamond0501.github.io` (Cloudflare flattens it to GitHub's `A` and `AAAA` addresses)
    - `www` `CNAME` to `diamond0501.github.io`
-4. Enable **Enforce HTTPS** once the certificate shows as issued. If none appears within a few minutes, remove the custom domain and set it again; re-saving the same value does not trigger it. GitHub's servers take about 5 more minutes to serve the certificate.
+4. Enable **Enforce HTTPS** once the certificate shows as issued. If none appears within a few minutes, remove the custom domain and set it again; re-saving the same value does not trigger it. Changing the domain or the HTTPS setting needs admin rights on the repository. GitHub's servers take about 5 more minutes to serve the certificate.
 5. Check that `https://yitingchen.de/` is served over HTTPS and that `https://yitingchen.de/en/` and `https://yitingchen.de/zh/` resolve.
