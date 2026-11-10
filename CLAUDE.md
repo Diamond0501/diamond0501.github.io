@@ -54,7 +54,7 @@ The pre-commit hook runs ESLint and Prettier on staged files and blocks the comm
 
 ## Layout & Components
 
-- Below 1180 px the four page links move into a `<details class="menu">` disclosure; at 520 px and below the language switcher moves in too. Both link lists are always rendered and CSS shows one per breakpoint
+- Below 1180 px the four page links move into a `<details class="menu">` disclosure; at 520 px and below the language switcher moves in too. Both link lists are rendered and CSS shows one per breakpoint. Without page links (the coming-soon stage) the menu appears only at 520 px and below, for the language switcher
 
 ## Styling System
 
@@ -83,9 +83,10 @@ The pre-commit hook runs ESLint and Prettier on staged files and blocks the comm
 
 # Important Notes
 
-- Static site, no backend of its own. The request form on the contact page posts to a Google Apps Script web app in her Workspace (`apps-script/contact-form.gs`, setup in the README), which emails the request to her and stores nothing. The hero and closing buttons link to the form (`#anfrage` on the contact page)
-- The form works without JS, and the script then answers with its own page. With JS, a small script on the contact page submits it in place
+- Static site, no backend of its own. The request form (`ContactSections.astro`, on the contact page) posts to a Google Apps Script web app in her Workspace (`apps-script/contact-form.gs`, setup in the README), which emails the request to her and stores nothing. The hero and closing buttons link to the form through `formPathFor` (`#anfrage` on the contact page)
+- The form works without JS, and the script then answers with its own page. With JS, a small script in `ContactSections.astro` submits it in place
 - No cookies, analytics, CDNs or embeds: apart from submitting the form, the built site requests nothing from third-party hosts
 - Keep the site's Cloudflare records unproxied. The proxy would add a second processor and inject scripts, which the Datenschutz page rules out
 - Every third-party service the site or the practice uses (form backend, proxy, embed, payment) needs its own section on the Datenschutz page. When proposing one, name that cost before the choice is made
+- Until launch, the deploy publishes a build made with `PUBLIC_SITE_STAGE=coming-soon`. In that stage `pageKeys` in `src/i18n/routes.ts` holds only the home page, which renders as a notice with the request form (`ComingSoonPage.astro`). Impressum, Datenschutz and the 404 page are built as usual. The AGB are removed from the output, because they link to the price sections. Nav, footer and form links all derive from `pageKeys`, so add pages there rather than branching on the stage elsewhere. Without the variable, `pnpm dev` and `pnpm build` produce the full site, which CI still builds and checks first and which is reviewed on a private Cloudflare Pages preview (setup in the README). Launching means removing the stage build from `deploy.yml` and deleting the preview
 - Deployment runs through `.github/workflows/deploy.yml` on push to `main`: lint, format check, `astro check`, build and the launch check must all pass before the deploy job runs

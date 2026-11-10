@@ -2,15 +2,16 @@
 import type { GetStaticPaths } from 'astro';
 import AboutPage from '../components/pages/AboutPage.astro';
 import CoachingPage from '../components/pages/CoachingPage.astro';
+import ComingSoonPage from '../components/pages/ComingSoonPage.astro';
 import ContactPage from '../components/pages/ContactPage.astro';
 import CouplesPage from '../components/pages/CouplesPage.astro';
 import FaqPage from '../components/pages/FaqPage.astro';
 import HomePage from '../components/pages/HomePage.astro';
 import { locales, type Locale } from '../data/site';
-import { routes, type PageKey } from '../i18n/routes';
+import { comingSoon, pageKeys, routes, type PageKey } from '../i18n/routes';
 
 export const getStaticPaths = (() =>
-  (Object.keys(routes) as PageKey[]).flatMap((pageKey) =>
+  pageKeys.flatMap((pageKey) =>
     locales.map((locale) => ({
       params: { slug: routes[pageKey][locale].replace(/^\/|\/$/g, '') || undefined },
       props: { pageKey, locale },
@@ -23,7 +24,7 @@ interface Props {
 }
 
 const pages = {
-  home: HomePage,
+  home: comingSoon ? ComingSoonPage : HomePage,
   couples: CouplesPage,
   coaching: CoachingPage,
   about: AboutPage,

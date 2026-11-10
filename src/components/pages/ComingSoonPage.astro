@@ -1,0 +1,19 @@
+---
+import { home } from '../../data/pages/home';
+import type { Locale } from '../../data/site';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactSections from '../ContactSections.astro';
+import Hero from '../Hero.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = home[locale];
+---
+
+<BaseLayout {locale} pageKey="home" title={t.title} description={t.description}>
+  <Hero {locale} content={t.hero} />
+  <ContactSections {locale} title={t.comingSoon.title} lead={t.comingSoon.text} />
+</BaseLayout>

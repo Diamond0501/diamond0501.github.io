@@ -1,8 +1,22 @@
 // @ts-check
+import { rm } from 'node:fs/promises';
 import { defineConfig, fontProviders } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
+
+// The AGB link to the price sections of the service pages. A build without those pages (the
+// coming-soon stage, see src/i18n/routes.ts) therefore ships without the AGB.
+const dropTermsWithoutPrices = {
+  name: 'drop-terms-without-prices',
+  hooks: {
+    /** @param {{ dir: URL, pages: { pathname: string }[] }} options */
+    'astro:build:done': async ({ dir, pages }) => {
+      const built = (/** @type {string} */ pathname) => pages.some((page) => page.pathname === pathname);
+      if (!built('paartherapie/') || !built('coaching/')) await rm(new URL('agb/', dir), { recursive: true });
+    },
+  },
+};
 
 export default defineConfig({
   site: 'https://yitingchen.de',
@@ -14,6 +28,7 @@ export default defineConfig({
     icon(),
     // The legal pages are noindex, so they stay out of the sitemap.
     sitemap({ filter: (page) => !/\/(impressum|datenschutz|agb)\/$/.test(page) }),
+    dropTermsWithoutPrices,
   ],
   // The CJK families are the fallbacks so Chinese text keeps a serif or sans face. The generic family
   // must come last, otherwise it would win over every CJK family listed after it.

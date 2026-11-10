@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { site, type Locale } from '../data/site';
-import { navKeys, pathFor, type PageKey } from '../i18n/routes';
+import { contactPathFor, navKeys, pathFor, type PageKey } from '../i18n/routes';
 import { ui } from '../i18n/ui';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 
@@ -17,24 +17,27 @@ const pageLinks = navKeys.map((key) => ({
   label: t.nav[key],
   current: key === pageKey ? ('page' as const) : undefined,
 }));
+const hasPageLinks = pageLinks.length > 0;
 ---
 
 <header class="topbar">
-  <nav class="nav wrap" aria-label={t.mainNavLabel}>
+  <nav class:list={['nav wrap', { 'nav-bare': !hasPageLinks }]} aria-label={t.mainNavLabel}>
     <a class="wordmark" href={pathFor('home', locale)}>
       {site.name}
     </a>
-    <ul class="links">
-      {pageLinks.map((link) => (
-        <li>
-          <a href={link.href} aria-current={link.current}>
-            {link.label}
-          </a>
-        </li>
-      ))}
-    </ul>
+    {hasPageLinks && (
+      <ul class="links">
+        {pageLinks.map((link) => (
+          <li>
+            <a href={link.href} aria-current={link.current}>
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
     <LanguageSwitcher {locale} {pageKey} />
-    <a class="nav-cta" href={pathFor('contact', locale)} aria-current={pageKey === 'contact' ? 'page' : undefined}>
+    <a class="nav-cta" href={contactPathFor(locale)} aria-current={pageKey === 'contact' ? 'page' : undefined}>
       {t.nav.contact}
     </a>
     <details class="menu">
@@ -44,15 +47,17 @@ const pageLinks = navKeys.map((key) => ({
       </summary>
       <div class="menu-panel">
         <div class="wrap">
-          <ul>
-            {pageLinks.map((link) => (
-              <li>
-                <a href={link.href} aria-current={link.current}>
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          {hasPageLinks && (
+            <ul>
+              {pageLinks.map((link) => (
+                <li>
+                  <a href={link.href} aria-current={link.current}>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
           <LanguageSwitcher {locale} {pageKey} />
         </div>
       </div>
