@@ -40,13 +40,15 @@ The pre-commit hook runs ESLint and Prettier on staged files and blocks the comm
 
 ## Content
 
-- Each page's text lives in a typed module `src/data/pages/<key>.ts` exporting `Record<Locale, …>`. German is authored first; English and Chinese (formal 您) are translations
+- Each page's text lives in a typed module `src/data/pages/<key>.ts` exporting `Record<Locale, …>`. German is authored first; English and Chinese are translations. English uses American spelling, the Oxford comma and sentence-case headings; Chinese uses the formal 您, and 你们 for a couple
+- Translations render the sense, not the German word for word. Fixed Chinese terms: 人生教练 for Coaching, 初次沟通 for the Kennenlerngespräch, 情绪聚焦 for emotion-focused
 - Paartherapie and Coaching share one template (`src/components/pages/ServicePage.astro`) and one content shape (`ServiceContent` in `src/data/pages/service.ts`): approach list → topic grid → process steps (`#ablauf`) → online sessions → prices and conditions (`#kosten`) → closing. Text both pages show word for word lives once in `service.ts`. Keep the two pages parallel
 - **Line counts are part of the design.** At desktop widths (checked at 1440 and 1600 px), siblings match: every item in a list or grid has the same number of lines, grid and list titles are one line, inner-page titles are one line, and inner-page leads have the same line count within a language (DE/EN 3, ZH 2). Section titles stand alone, without a one-line tagline under them. After editing copy, re-check the affected page in all three languages
 - Unresolved content renders the literal marker `TODO` (e.g. `TODO(yiting): …`). `pnpm check:launch` fails on it, and CI runs it before deploying, so nothing ships with a placeholder
+- The price note keeps its § 19 UStG wording. Never state prices as including VAT: as a Kleinunternehmerin she charges none, so "inkl. USt" would be a misleading price statement
 - Her titles are "Psychologin (M.Sc.), Paartherapeutin & Coach" ("Coach", never "Coachin"). The provider name is "Yiting Chen, Paartherapie & Coaching" on one line, as on her letterhead
 - `src/data/site.ts`: name, contact details, contact form URL, OG image, locales and their `lang` tags
-- The two offers read as clearly different. Paartherapie copy uses therapy vocabulary (patterns, feelings, closeness, trust), Coaching copy the vocabulary of goals, methods and next steps. The process steps name no session counts; the FAQ answers how many sessions it takes
+- The two offers read as clearly different. Paartherapie copy uses therapy vocabulary (patterns, feelings, closeness, trust), Coaching copy the vocabulary of goals, methods and next steps. Coaching is life coaching for a person's own topics, not the solo track of couples therapy: someone who starts alone about their relationship books individual sessions within Paartherapie, and Coaching copy leaves out "Trennung" and "Beziehung". The process steps name no session counts; the FAQ answers how many sessions it takes
 - Legal pages are Markdown with `layout: ../layouts/MarkdownPageLayout.astro`
 - Content pages speak as "ich". The legal pages and the price conditions do not: the AGB use the third person ("die Anbieterin", defined in § 1) and address the client as "Sie", the Datenschutz page is impersonal with "die Verantwortliche" where an actor is needed, and the Impressum is impersonal. The Widerrufsbelehrung and the Muster-Widerrufsformular keep the statutory model's wording, "wir/uns" included, because its legal protection depends on taking it over unchanged
 
@@ -59,8 +61,8 @@ The pre-commit hook runs ESLint and Prettier on staged files and blocks the comm
 - A single `src/styles/global.css`, imported once in `BaseLayout.astro`: `@theme` colour tokens, `@layer base`, `@layer components` (all component classes), and an unlayered `.prose` override block (the typography plugin emits `.prose` into the `utilities` layer, so layered overrides would lose)
 - **Colour by role**, all Tailwind colours (the default palette is cleared, so only these exist):
   - Sand: `orange-50` page and hero background (the hero photo fades into it), `orange-100` large sections, the wave, the closing section and the footer
-  - `white` for cards and icon tiles; `stone-800` body text, `stone-600` small secondary text (the note under the call-to-action buttons, the form hint, the footer)
-  - Blue: `sky-900` wordmark and headings; `sky-800` text links (including the email and phone links), icons and focus; `sky-200` only for the duotone fill layer of icons, the same for every icon
+  - `white` for cards and icon tiles; `stone-800` body text, `h2` and `h3`; `stone-600` small secondary text (the note under the call-to-action buttons, the form hint, the footer)
+  - Blue: `sky-900` wordmark, `h1`, price figures and form labels; `sky-800` text links (including the email and phone links), icons and focus; `sky-200` only for the duotone fill layer of icons, the same for every icon
   - Orange for calls to action and small accents, in the sand's colour family: `orange-700` filled buttons, the Kontakt button and eyebrows, `orange-800` button hover, `orange-600` the nav underline and the active-language and menu markers. White on `orange-700` passes 4.5:1; `orange-600` is too light for text
   - `rule` (hairlines), `edge` (card borders) and `field` (form field borders, 3:1 against white) are translucent `sky-900`
   - The one colour outside the palette is the card shadow, a translucent dark blue-grey

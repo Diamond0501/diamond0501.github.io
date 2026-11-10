@@ -19,13 +19,13 @@ const PAGES = {
     home: 'https://yitingchen.de/',
   },
   en: {
-    sent: "Thank you, your request has arrived. I'll get back to you.",
+    sent: "Thank you, your message has been sent. I'll get back to you.",
     failed: 'Sorry, that did not work. Please write to me directly at mail@yitingchen.de.',
     back: 'Back to the website',
     home: 'https://yitingchen.de/en/',
   },
   zh: {
-    sent: '谢谢，您的咨询已成功发送。我会与您联系。',
+    sent: '谢谢，您的留言已成功发送。我会尽快与您联系。',
     failed: '很抱歉，发送未成功。请直接发送电子邮件至 mail@yitingchen.de。',
     back: '返回网站',
     home: 'https://yitingchen.de/zh/',

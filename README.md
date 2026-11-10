@@ -46,7 +46,7 @@ The request form on the contact page posts to a Google Apps Script web app, `app
 4. Copy the web app URL (`https://script.google.com/macros/s/…/exec`) into `contactForm` in `src/data/site.ts`.
 5. Send a test request from the deployed contact page, once with JavaScript and once without.
 
-If **Anyone** is missing in step 2, allow it in the Google Admin console (Apps → Google Workspace → Drive and Docs → sharing outside the organisation).
+If **Anyone** is missing in step 2, allow it in the Google Admin console (Apps → Google Workspace → Drive and Docs → sharing outside the organization).
 
 After changing the script, use **Manage deployments → Edit → New version**, so the URL stays the same.
 

@@ -47,9 +47,9 @@ export const faq: Record<Locale, FaqContent> = {
       {
         question: 'Mein Partner möchte nicht mitkommen. Kann ich allein anfangen?',
         answer: [
-          'Ja. Wenn sich eine Person verändert, verändert sich oft auch die Beziehung. Im Coaching schauen wir auf Ihren Teil des Musters und darauf, was Sie selbst in der Hand haben. Möchte Ihr Partner oder Ihre Partnerin später dazukommen, ist das jederzeit möglich.',
+          'Ja. Wenn sich eine Person verändert, verändert sich oft auch die Beziehung. In Einzelsitzungen der Paartherapie schauen wir auf Ihren Teil des Musters und darauf, was Sie selbst in der Hand haben. Möchte Ihr Partner oder Ihre Partnerin später dazukommen, ist das jederzeit möglich.',
         ],
-        link: { pageKey: 'coaching', label: 'Mehr zum Coaching' },
+        link: { pageKey: 'couples', label: 'Mehr zur Paartherapie' },
       },
       {
         question: 'Bleibt vertraulich, was ich erzähle?',
@@ -66,7 +66,7 @@ export const faq: Record<Locale, FaqContent> = {
       {
         question: 'Was ist der Unterschied zwischen Paartherapie und Coaching?',
         answer: [
-          'Paartherapie richtet sich an Sie beide als Paar, Coaching an Sie als einzelne Person. Beides sind psychologische Beratungsangebote: Sie sind keine Heilbehandlung und ersetzen keine Psychotherapie.',
+          'In der Paartherapie arbeiten wir an Ihrer Beziehung, zu zweit oder in Einzelsitzungen. Im Coaching geht es um Ihre eigenen Themen, etwa Beruf, Neuorientierung oder einen neuen Lebensabschnitt. Beides sind psychologische Beratungsangebote: Sie sind keine Heilbehandlung und ersetzen keine Psychotherapie.',
           'Wenn Sie an einer psychischen Erkrankung leiden, wenden Sie sich bitte an eine ärztliche oder psychotherapeutische Praxis.',
         ],
       },
@@ -87,29 +87,29 @@ export const faq: Record<Locale, FaqContent> = {
   en: {
     title: 'Common questions',
     description:
-      'Answers to common questions about couples therapy and coaching with Yiting Chen: online sessions, duration, fees, confidentiality and languages.',
+      'Answers to common questions about couples therapy and coaching with Yiting Chen: online sessions, duration, fees, confidentiality, and languages.',
     head: {
       eyebrow: 'FAQ',
       title: 'Your questions',
-      lead: 'Here are answers to the questions I am asked most often: about the process, fees and languages. If yours is missing, feel free to write to me.',
+      lead: 'Here are answers to the questions I am asked most often: about the process, fees, and languages. If yours is missing, feel free to write to me.',
     },
     items: [
       {
         question: 'How does an online session work?',
         answer: [
-          'We meet by video call at the agreed time; you receive the link by email beforehand. The session is like a conversation in a practice, except that you can stay at home. As a couple, it works best to sit together in front of one screen.',
+          'We meet by video call at the agreed time; you receive the link by email beforehand. It works like an in-person session, except that you can stay at home. As a couple, it works best to sit together in front of one screen.',
         ],
       },
       {
         question: 'Can I get to know you first?',
         answer: [
-          'Yes. Before the first session I offer a free 15-minute intro call by phone. We clarify what brings you and whether working together is a good fit – with no obligation.',
+          'Yes. Before the first session I offer a free 15-minute intro call by phone. We talk about what brings you here and whether working together is a good fit – with no obligation.',
         ],
       },
       {
         question: 'How many sessions does it take?',
         answer: [
-          'That depends on what you bring. As a rough guide, many couples plan for about ten sessions in total. Sometimes fewer are enough, sometimes longer support makes sense. We regularly review together where you stand.',
+          'That depends on what brings you here. As a rough guide, many couples plan for about ten sessions in total. Sometimes fewer are enough, sometimes longer support makes sense. We regularly review together where you stand.',
         ],
       },
       {
@@ -122,9 +122,9 @@ export const faq: Record<Locale, FaqContent> = {
       {
         question: "My partner doesn't want to come. Can I start on my own?",
         answer: [
-          'Yes. When one person changes, the relationship often changes too. In coaching we look at your part of the pattern and at what is in your own hands. If your partner wants to join later, that is always possible.',
+          'Yes. When one person changes, the relationship often changes too. In individual sessions of couples therapy we look at your part of the pattern and at what is in your own hands. If your partner wants to join later, that is always possible.',
         ],
-        link: { pageKey: 'coaching', label: 'More about coaching' },
+        link: { pageKey: 'couples', label: 'More about couples therapy' },
       },
       {
         question: 'Will what I say stay confidential?',
@@ -135,13 +135,13 @@ export const faq: Record<Locale, FaqContent> = {
       {
         question: 'Which languages are sessions available in?',
         answer: [
-          'German, English or Chinese (Mandarin). If you and your partner have different first languages, we find a language together in which you both feel comfortable.',
+          'German, English, or Chinese (Mandarin). If you and your partner have different first languages, we find a language together in which you both feel comfortable.',
         ],
       },
       {
         question: 'What is the difference between couples therapy and coaching?',
         answer: [
-          'Couples therapy is for the two of you as a couple, coaching for you as an individual. Both are psychological counselling services: they are not medical treatment and do not replace psychotherapy.',
+          'In couples therapy we work on your relationship, together or in individual sessions. Coaching is about your own topics, such as work, a change of direction, or a new stage of life. Both are psychological counseling services: they are not medical treatment and do not replace psychotherapy.',
           'If you have a mental illness, please contact a doctor or psychotherapist.',
         ],
       },
@@ -154,14 +154,14 @@ export const faq: Record<Locale, FaqContent> = {
       {
         question: 'What do I need technically?',
         answer: [
-          'A computer, tablet or smartphone with a camera and microphone, a stable internet connection and a quiet room. For the sessions we use Google Meet.',
+          'A computer, tablet, or smartphone with a camera and microphone, a stable internet connection, and a quiet room. For the sessions we use Google Meet.',
         ],
       },
     ],
   },
   zh: {
     title: '常见问题',
-    description: '关于 Yiting Chen 伴侣治疗与个人教练的常见问题：线上咨询、咨询次数、费用、保密和语言。',
+    description: '关于 Yiting Chen 伴侣治疗与人生教练的常见问题：线上咨询、咨询次数、费用、保密和语言。',
     head: {
       eyebrow: 'FAQ',
       title: '常见问题',
@@ -175,30 +175,30 @@ export const faq: Record<Locale, FaqContent> = {
         ],
       },
       {
-        question: '我可以先和您认识一下吗？',
+        question: '正式开始前，可以先聊一聊吗？',
         answer: [
-          '可以。在首次咨询之前，我提供一次 15 分钟的免费电话初次了解谈话。我们会聊聊您的议题，看看合作是否合适，没有任何义务。',
+          '可以。在首次咨询之前，我提供一次 15 分钟的免费电话沟通。我们聊聊您的情况，看看是否适合一起工作，您无需承担任何义务。',
         ],
       },
       {
         question: '需要多少次咨询？',
         answer: [
-          '这取决于您的议题。粗略来说，许多伴侣总共需要大约十次咨询。有时更少就够了，有时更长时间的陪伴会更合适。我们会定期一起回顾您目前的状态。',
+          '这取决于您的议题。大致来说，许多伴侣总共需要十次左右的咨询。有时次数更少就够了，有时则需要更长时间的陪伴。我们会定期一起回顾进展。',
         ],
       },
       {
         question: '费用是多少？医疗保险能报销吗？',
         answer: [
-          '按次付费；价格取决于您是伴侣一起来还是独自来，以及每次咨询的时长。伴侣治疗和个人教练不属于法定医疗保险的报销范围，因此费用由您自行承担。',
-          '具体价格请见伴侣治疗和个人教练页面。',
+          '按次付费；价格取决于您是伴侣一起来还是独自来，以及每次咨询的时长。伴侣治疗和人生教练不属于法定医疗保险的报销范围，因此费用由您自行承担。',
+          '具体价格请见伴侣治疗和人生教练页面。',
         ],
       },
       {
         question: '我的伴侣不想来。我可以自己先开始吗？',
         answer: [
-          '可以。当一个人发生改变时，关系往往也会随之改变。在个人教练中，我们关注您在这个模式中的部分，以及您自己能够掌握的事情。如果您的伴侣之后想加入，随时都可以。',
+          '可以。当一个人发生改变时，关系往往也会随之改变。在伴侣治疗的个别咨询中，我们关注您在这个互动模式中的角色，以及您自己可以改变的部分。如果您的伴侣之后想加入，随时都可以。',
         ],
-        link: { pageKey: 'coaching', label: '了解个人教练' },
+        link: { pageKey: 'couples', label: '了解伴侣治疗' },
       },
       {
         question: '我说的内容会保密吗？',
@@ -211,9 +211,9 @@ export const faq: Record<Locale, FaqContent> = {
         answer: ['德语、英语或中文（普通话）。如果你们两人的母语不同，我们会一起找到一种让双方都感到自在的语言。'],
       },
       {
-        question: '伴侣治疗和个人教练有什么区别？',
+        question: '伴侣治疗和人生教练有什么区别？',
         answer: [
-          '伴侣治疗面向作为伴侣的你们两人，个人教练面向您个人。两者都属于心理咨询服务：它们不属于医疗行为，也不能替代心理治疗。',
+          '在伴侣治疗中，我们关注的是你们的关系，可以两人一起，也可以通过个别咨询。人生教练围绕的是您个人的议题，例如职业、寻找新方向或新的人生阶段。两者都属于心理咨询服务：它们不属于医疗行为，也不能替代心理治疗。',
           '如果您患有心理疾病，请联系医生或心理治疗师。',
         ],
       },

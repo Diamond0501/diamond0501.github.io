@@ -140,16 +140,16 @@ export const service: Record<Locale, SharedServiceContent> = {
     },
     fees: {
       eyebrow: 'Fees',
-      title: 'Fees and conditions',
+      title: 'Fees and terms',
       minutes: 'minutes',
       conditions: [
         {
           icon: 'receipt',
-          text: 'Couples therapy and coaching are not covered by statutory health insurance; you pay yourself.',
+          text: 'Couples therapy and coaching are not covered by statutory health insurance; you pay out of pocket.',
         },
         {
           icon: 'link',
-          text: 'Before each session you receive a SumUp payment link for card, Apple Pay or Google Pay.',
+          text: 'Before each session you receive a SumUp payment link for card, Apple Pay, or Google Pay.',
         },
         {
           icon: 'calendar-x',
@@ -172,8 +172,8 @@ export const service: Record<Locale, SharedServiceContent> = {
       title: '咨询如何进行',
       intro: {
         icon: 'phone',
-        title: '初次了解谈话',
-        text: '15 分钟的免费电话交谈：我们彼此认识，并看看合作是否合适。',
+        title: '初次沟通',
+        text: '15 分钟的免费电话沟通：我们彼此认识，并看看合作是否合适。',
       },
     },
     online: {
@@ -191,7 +191,7 @@ export const service: Record<Locale, SharedServiceContent> = {
       title: '价格与条件',
       minutes: '分钟',
       conditions: [
-        { icon: 'receipt', text: '伴侣治疗和个人教练不属于法定医疗保险的报销范围，费用由您自行承担。' },
+        { icon: 'receipt', text: '伴侣治疗和人生教练不属于法定医疗保险的报销范围，费用由您自行承担。' },
         {
           icon: 'link',
           text: '每次线上咨询前，您会收到一个 SumUp 付款链接，可使用信用卡或借记卡、Apple Pay 或 Google Pay 付款。',
@@ -203,7 +203,7 @@ export const service: Record<Locale, SharedServiceContent> = {
         { icon: 'tag', text: '所有价格均为最终价格。根据德国《增值税法》第 19 条的小企业规定，不收取增值税。' },
       ],
       termsLink: '服务条款（德语）',
-      note: '伴侣治疗和个人教练不属于医疗行为，不能替代心理治疗。',
+      note: '伴侣治疗和人生教练不属于医疗行为，不能替代心理治疗。',
     },
   },
 };

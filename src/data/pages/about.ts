@@ -16,7 +16,7 @@ export const about: Record<Locale, AboutContent> = {
     head: {
       eyebrow: 'Über mich',
       credentials: 'Psychologin (M.Sc.), Paartherapeutin & Coach',
-      lead: 'Ich begleite Paare und Einzelne dabei, ihre Beziehung besser zu verstehen und wieder zueinanderzufinden – empathisch, strukturiert und auf Augenhöhe.',
+      lead: 'Ich begleite Paare dabei, wieder zueinanderzufinden, und Einzelne dabei, Klarheit für ihren eigenen Weg zu gewinnen – empathisch, strukturiert und auf Augenhöhe.',
       portraitAlt: 'Porträt von Yiting Chen',
     },
     path: {
@@ -58,11 +58,11 @@ export const about: Record<Locale, AboutContent> = {
   en: {
     title: 'About',
     description:
-      'Yiting Chen, psychologist (M.Sc.), couples therapist & coach: couples therapy and coaching online in German, English and Chinese.',
+      'Yiting Chen, psychologist (M.Sc.), couples therapist & coach: couples therapy and coaching online in German, English, and Chinese.',
     head: {
       eyebrow: 'About',
       credentials: 'Psychologist (M.Sc.), couples therapist & coach',
-      lead: 'I support couples and individuals in understanding their relationship better and finding their way back to each other – with empathy, in a structured way and on equal footing.',
+      lead: 'I support couples in finding their way back to each other and individuals in gaining clarity about their own path – with empathy, in a structured way, and on equal footing.',
       portraitAlt: 'Portrait of Yiting Chen',
     },
     path: {
@@ -71,7 +71,7 @@ export const about: Record<Locale, AboutContent> = {
         { icon: 'map-trifold', text: 'I grew up in China and have lived in Germany for more than ten years.' },
         {
           icon: 'globe-hemisphere-west',
-          text: 'I am in an intercultural marriage myself and know the challenges of such a partnership.',
+          text: 'I am in an intercultural marriage myself and know its challenges firsthand.',
         },
         {
           icon: 'graduation-cap',
@@ -81,33 +81,33 @@ export const about: Record<Locale, AboutContent> = {
           icon: 'book-open-text',
           text: 'My thesis studied what predicts marital satisfaction – with couples from 14 countries.',
         },
-        { icon: 'student', text: 'Further training in emotionally focused and schema-therapy-based couples therapy.' },
+        { icon: 'student', text: 'Advanced training in emotionally focused and schema-therapy-based couples therapy.' },
         {
           icon: 'certificate',
           text: 'Certified coach according to the criteria of the Deutscher Coaching Verband e.\u00a0V. (DCV).',
         },
         {
           icon: 'translate',
-          text: 'You can have your sessions with me in German, English or Chinese.',
+          text: 'You can have your sessions with me in German, English, or Chinese.',
         },
       ],
     },
     stance: {
       title: 'My approach',
       paragraphs: [
-        'I meet you with appreciation and openness. In a relationship there is rarely one person to blame; usually there is a pattern both are caught in. Understanding it together brings relief.',
-        'I see cultural background as important context, not as a box. Every family brings its own unspoken rules, and every couple finds its own mix.',
-        'I work in a structured way: we clarify your goals, keep them in view and check regularly that we are heading in the right direction.',
+        'I approach you with respect and openness. In a relationship there is rarely one person to blame; usually there is a pattern both are caught in. Understanding it together brings relief.',
+        'I see cultural background as important context, not as a label. Every family brings its own unspoken rules, and every couple finds its own mix.',
+        'I work in a structured way: we clarify your goals, keep them in view, and check regularly that we are heading in the right direction.',
       ],
     },
   },
   zh: {
     title: '关于我',
-    description: 'Yiting Chen，心理学硕士、伴侣治疗师与教练：提供德语、英语和中文的线上伴侣治疗与个人教练。',
+    description: 'Yiting Chen，心理学硕士、伴侣治疗师与教练：提供德语、英语和中文的线上伴侣治疗与人生教练。',
     head: {
       eyebrow: '关于我',
       credentials: '心理学硕士（M.Sc.）、伴侣治疗师与教练',
-      lead: '我陪伴伴侣和个人更好地理解彼此的关系，重新走近对方——富有同理心、有条理，并且平等相待。',
+      lead: '我陪伴伴侣重新走近彼此，也陪伴个人看清自己的方向——富有同理心、有条理，并且平等相待。',
       portraitAlt: 'Yiting Chen 的肖像',
     },
     path: {
@@ -120,17 +120,17 @@ export const about: Record<Locale, AboutContent> = {
           icon: 'book-open-text',
           text: '毕业论文：婚姻满意度的个人与文化因素（14 国数据）。',
         },
-        { icon: 'student', text: '接受过情绪取向伴侣治疗与图式疗法取向伴侣治疗的进修培训。' },
+        { icon: 'student', text: '接受过情绪聚焦伴侣治疗和图式伴侣治疗的进修培训。' },
         { icon: 'certificate', text: '依据德国教练协会（DCV）标准认证的教练。' },
         { icon: 'translate', text: '我提供德语、英语和中文的咨询。' },
       ],
     },
     stance: {
-      title: '我的态度',
+      title: '我的理念',
       paragraphs: [
-        '我以尊重和开放的态度与您相遇。在一段关系中，很少只有一个人有错；更常见的是双方都被困在同一个模式里。一起理解它，本身就能带来轻松。',
-        '我把文化背景视为重要的语境，而不是标签。每个家庭都有自己默认的规则，每对伴侣也会找到属于自己的融合方式。',
-        '同时，我的工作方式是有条理的：我们一起明确目标，始终把它放在眼前，并定期检视方向是否正确。',
+        '我以尊重和开放的态度对待每一位来访者。在一段关系中，很少只有一个人有错；更常见的是双方都被困在同一个模式里。一起看清这个模式，往往就能让人松一口气。',
+        '对我来说，文化背景是理解一个人的重要线索，而不是标签。每个家庭都有自己默认的规则，每对伴侣也会找到属于自己的融合方式。',
+        '同时，我的工作方式是有条理的：我们一起明确目标，过程中始终围绕目标，并定期确认方向是否正确。',
       ],
     },
   },

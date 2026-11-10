@@ -9,7 +9,7 @@ export const coaching: Record<Locale, ServiceContent> = {
     head: {
       eyebrow: 'Coaching',
       title: 'Klarheit gewinnen',
-      lead: 'Ob Beruf, Beziehung oder ein neuer Lebensabschnitt: Im Einzelcoaching nehmen wir uns Zeit für Ihre Sicht, Ihre Gefühle und Ihre Möglichkeiten – und erarbeiten, wie es für Sie weitergehen kann.',
+      lead: 'Ob Beruf, Selbstwert oder ein neuer Lebensabschnitt: Im Einzelcoaching nehmen wir uns Zeit für Ihre Sicht, Ihre Gefühle und Ihre Möglichkeiten – und erarbeiten, wie es für Sie weitergehen kann.',
     },
     approach: {
       items: [
@@ -66,7 +66,7 @@ export const coaching: Record<Locale, ServiceContent> = {
         {
           icon: 'path',
           title: 'Lebensübergänge',
-          text: 'Umzug, Elternschaft oder Trennung: einen neuen Lebensabschnitt bewusst gestalten.',
+          text: 'Umzug, Elternschaft oder Jobwechsel: einen neuen Lebensabschnitt bewusst gestalten.',
         },
         {
           icon: 'globe-hemisphere-west',
@@ -99,11 +99,11 @@ export const coaching: Record<Locale, ServiceContent> = {
   en: {
     title: 'Coaching',
     description:
-      'Coaching online with Yiting Chen on new directions, work, self-worth and life transitions – including life between cultures.',
+      'Coaching online with Yiting Chen on new directions, work, self-worth, and life transitions – including life between cultures.',
     head: {
       eyebrow: 'Coaching',
       title: 'Gaining clarity',
-      lead: 'Whether it is work, relationships or a new chapter of life: in individual coaching we take time for your perspective, your feelings and your options – and work out how things can move forward for you.',
+      lead: 'Whether it is work, self-worth, or a new chapter of life: in individual coaching we take time for your perspective, your feelings, and your options – and work out how things can move forward for you.',
     },
     approach: {
       items: [
@@ -124,8 +124,8 @@ export const coaching: Record<Locale, ServiceContent> = {
         },
         {
           icon: 'tree-structure',
-          title: 'System visualisation',
-          text: 'Using symbols on a digital board, we make visible how the people around you relate to one another.',
+          title: 'System visualization',
+          text: 'Using symbols on a digital board, we map out how the people around you relate to one another.',
         },
         {
           icon: 'plant',
@@ -150,17 +150,17 @@ export const coaching: Record<Locale, ServiceContent> = {
         {
           icon: 'shield-check',
           title: 'Self-worth & boundaries',
-          text: 'Trust yourself more, take your own needs seriously and stand up for them clearly.',
+          text: 'Trust yourself more, take your own needs seriously, and stand up for them clearly.',
         },
         {
           icon: 'scales',
           title: 'Balance & stress',
-          text: 'Find your balance again between work, family and your own expectations.',
+          text: 'Find your balance again between work, family, and your own expectations.',
         },
         {
           icon: 'path',
           title: 'Life transitions',
-          text: 'A move, parenthood or a separation: shape a new chapter of life with intention.',
+          text: 'A move, parenthood, or a job change: shape a new chapter of life with intention.',
         },
         {
           icon: 'globe-hemisphere-west',
@@ -178,25 +178,25 @@ export const coaching: Record<Locale, ServiceContent> = {
         },
         {
           icon: 'magnifying-glass',
-          title: 'Working through',
+          title: 'Exploring',
           text: 'With methods that suit you, we take a closer look together and find new perspectives.',
         },
         {
           icon: 'plant',
           title: 'Taking steps',
-          text: 'You take first steps in your everyday life, and we consolidate what really helps you.',
+          text: 'You take first steps in your everyday life, and we build on what really helps you.',
         },
       ],
     },
     prices: [{ title: 'Coaching', rates: individualRates }],
   },
   zh: {
-    title: '个人教练',
-    description: '与 Yiting Chen 进行线上个人教练：围绕人生方向、职业、自我价值与人生转折，也涉及跨文化生活。',
+    title: '人生教练',
+    description: 'Yiting Chen 的线上人生教练服务：围绕人生方向、职业、自我价值与人生转折，也涉及跨文化生活。',
     head: {
-      eyebrow: '个人教练',
+      eyebrow: '人生教练',
       title: '找到清晰的方向',
-      lead: '无论是工作、感情还是人生的新阶段，在一对一教练中，我们都会花时间关注您的视角、感受和可能性，并一起探索接下来的路。',
+      lead: '无论是工作、自我价值还是人生的新阶段，在教练过程中，我们都会花时间关注您的视角、感受和可能性，并一起探索接下来的路。',
     },
     approach: {
       items: [
@@ -212,8 +212,8 @@ export const coaching: Record<Locale, ServiceContent> = {
         },
         {
           icon: 'lightbulb',
-          title: '信念工作',
-          text: '发现“我必须让所有人满意”这类信念，检视它是否仍有益。',
+          title: '审视信念',
+          text: '发现“我必须让所有人满意”这类信念，看看它如今是否还对您有益。',
         },
         {
           icon: 'tree-structure',
@@ -222,7 +222,7 @@ export const coaching: Record<Locale, ServiceContent> = {
         },
         {
           icon: 'plant',
-          title: '资源激活',
+          title: '调动内在资源',
           text: '我们找回曾经帮助过您的力量，并让它在当下的处境中发挥作用。',
         },
       ],
@@ -232,7 +232,7 @@ export const coaching: Record<Locale, ServiceContent> = {
       items: [
         {
           icon: 'signpost',
-          title: '重新定位',
+          title: '寻找新方向',
           text: '站在人生的转折点上，做出一个真正适合自己的决定。',
         },
         {
@@ -253,11 +253,11 @@ export const coaching: Record<Locale, ServiceContent> = {
         {
           icon: 'path',
           title: '人生转折',
-          text: '搬家、为人父母或分离：有意识地塑造人生的新阶段。',
+          text: '搬家、为人父母或换工作：有意识地塑造人生的新阶段。',
         },
         {
           icon: 'globe-hemisphere-west',
-          title: '在文化之间生活',
+          title: '跨文化生活',
           text: '在两种文化之间找到自己的道路——在工作中，也在日常生活里。',
         },
       ],
@@ -272,7 +272,7 @@ export const coaching: Record<Locale, ServiceContent> = {
         {
           icon: 'magnifying-glass',
           title: '澄清与探索',
-          text: '借助合适的方法，我们深入观察，并找到新的视角。',
+          text: '借助合适的方法，我们一起深入探索，找到新的视角。',
         },
         {
           icon: 'plant',
@@ -281,6 +281,6 @@ export const coaching: Record<Locale, ServiceContent> = {
         },
       ],
     },
-    prices: [{ title: '个人教练', rates: individualRates }],
+    prices: [{ title: '人生教练', rates: individualRates }],
   },
 };

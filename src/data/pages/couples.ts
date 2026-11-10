@@ -97,7 +97,7 @@ export const couples: Record<Locale, ServiceContent> = {
   en: {
     title: 'Couples therapy',
     description:
-      'Couples therapy online with Yiting Chen: emotion-focused, integrative and resource-oriented – in German, English or Chinese.',
+      'Couples therapy online with Yiting Chen: emotion-focused, integrative, and resource-oriented – in German, English, or Chinese.',
     head: {
       eyebrow: 'Couples therapy',
       title: 'Feeling understood',
@@ -123,7 +123,7 @@ export const couples: Record<Locale, ServiceContent> = {
         {
           icon: 'compass',
           title: 'Culturally sensitive',
-          text: 'Origins, family and values shape every relationship. I take them seriously as context, without putting anyone in a box.',
+          text: 'Origins, family, and values shape every relationship. I take them seriously as context, without putting anyone in a box.',
         },
       ],
     },
@@ -133,12 +133,12 @@ export const couples: Record<Locale, ServiceContent> = {
         {
           icon: 'chats-circle',
           title: 'Communication',
-          text: 'Step out of argument loops and talk again so that both of you feel heard.',
+          text: 'Break out of recurring arguments and talk again so that both of you feel heard.',
         },
         {
           icon: 'hand-heart',
           title: 'Emotional closeness',
-          text: 'Understand the needs behind the behaviour and feel connected again.',
+          text: 'Understand the needs behind the behavior and feel connected again.',
         },
         {
           icon: 'handshake',
@@ -148,12 +148,12 @@ export const couples: Record<Locale, ServiceContent> = {
         {
           icon: 'users-three',
           title: 'Family & origins',
-          text: 'How families of origin, parents and in-laws shape the relationship.',
+          text: 'How families of origin, parents, and in-laws shape the relationship.',
         },
         {
           icon: 'globe-hemisphere-west',
-          title: 'Intercultural partnership',
-          text: 'See different backgrounds, values and family ideals as context – not as stereotypes.',
+          title: 'Intercultural relationships',
+          text: 'See different backgrounds, values, and family ideals as context – not as stereotypes.',
         },
         {
           icon: 'sun-horizon',
@@ -172,23 +172,23 @@ export const couples: Record<Locale, ServiceContent> = {
         {
           icon: 'magnifying-glass',
           title: 'Understanding patterns',
-          text: 'We look at what happens between you in conflict, and at the feelings beneath – also in individual sessions.',
+          text: 'We look at what happens between you in conflict, and at the feelings beneath – in individual sessions too.',
         },
         {
           icon: 'plant',
           title: 'Strengthening connection',
-          text: 'You approach each other differently, voice what feels vulnerable and regain closeness and trust.',
+          text: 'You approach each other differently, voice what feels vulnerable, and regain closeness and trust.',
         },
       ],
     },
     prices: [
-      { title: 'Couple session', rates: coupleRates },
+      { title: 'Couples session', rates: coupleRates },
       { title: 'Individual session', rates: individualRates },
     ],
   },
   zh: {
     title: '伴侣治疗',
-    description: '与 Yiting Chen 进行线上伴侣治疗：以情绪为焦点、整合取向、资源取向——可使用德语、英语或中文。',
+    description: '与 Yiting Chen 进行线上伴侣治疗：情绪聚焦、整合取向、资源取向——可使用德语、英语或中文。',
     head: {
       eyebrow: '伴侣治疗',
       title: '重新理解彼此',
@@ -198,13 +198,13 @@ export const couples: Record<Locale, ServiceContent> = {
       items: [
         {
           icon: 'heartbeat',
-          title: '以情绪为焦点',
+          title: '情绪聚焦',
           text: '我们关注争吵与退缩背后的感受与需求，模式正源于此。',
         },
         {
           icon: 'puzzle-piece',
           title: '整合取向',
-          text: '我结合不同流派中行之有效的方法，选择适合您情况的方式。',
+          text: '我结合不同流派中行之有效的方法，选择适合你们的方式。',
         },
         {
           icon: 'plant',
@@ -213,24 +213,24 @@ export const couples: Record<Locale, ServiceContent> = {
         },
         {
           icon: 'compass',
-          title: '文化敏感',
-          text: '我把成长背景、家庭和价值观当作语境来理解，而不是贴标签。',
+          title: '尊重文化差异',
+          text: '我把成长环境、家庭和价值观看作理解你们的背景，而不是贴标签。',
         },
       ],
     },
     topics: {
-      title: '伴侣们常带来的议题',
+      title: '伴侣常带来的议题',
       items: [
         { icon: 'chats-circle', title: '沟通', text: '走出反复争吵的循环，重新以双方都感到被倾听的方式交流。' },
         { icon: 'hand-heart', title: '情感亲密', text: '理解对方行为背后的需求，重新感受彼此之间的连接。' },
-        { icon: 'handshake', title: '危机后的信任', text: '在受伤之后，你们一起厘清是否以及如何重新开始。' },
-        { icon: 'users-three', title: '原生家庭', text: '原生家庭、父母和公婆如何在不知不觉中影响你们的关系。' },
+        { icon: 'handshake', title: '危机后的信任', text: '受伤之后，一起看清能不能重新开始，又该怎样开始。' },
+        { icon: 'users-three', title: '原生家庭', text: '原生家庭和双方父母如何在不知不觉中影响你们的关系。' },
         {
           icon: 'globe-hemisphere-west',
           title: '跨文化伴侣关系',
-          text: '把不同的成长背景、价值观和家庭观念理解为语境，而不是刻板印象。',
+          text: '理解不同的成长背景、价值观和家庭观念，而不是套用刻板印象。',
         },
-        { icon: 'sun-horizon', title: '人生新阶段', text: '搬家、孩子、换工作：这些变化会重新塑造一段关系。' },
+        { icon: 'sun-horizon', title: '人生新阶段', text: '搬家、有了孩子、换工作：这些变化会重新塑造一段关系。' },
       ],
     },
     process: {

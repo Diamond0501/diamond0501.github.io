@@ -73,7 +73,7 @@ export const contact: Record<Locale, ContactContent> = {
   },
   en: {
     title: 'Contact',
-    description: `Contact Yiting Chen through the request form, by email at ${site.email} or by phone at ${site.phone.display}.`,
+    description: `Contact Yiting Chen through the contact form, by email at ${site.email}, or by phone at ${site.phone.display}.`,
     head: {
       eyebrow: 'Contact',
       title: 'Write to me',
@@ -94,13 +94,13 @@ export const contact: Record<Locale, ContactContent> = {
       email: 'Email',
       message: 'Your message',
       privacy: {
-        before: 'Your details reach me by email and are used only to answer your request. See the ',
+        before: 'Your details reach me by email and are used only to answer your message. See the ',
         link: 'privacy policy (in German)',
         after: '.',
       },
-      submit: 'Send request',
-      sending: 'Sending …',
-      sent: "Thank you, your request has arrived. I'll get back to you.",
+      submit: 'Send message',
+      sending: 'Sending…',
+      sent: "Thank you, your message has been sent. I'll get back to you.",
       failed: { before: 'Sorry, that did not work. Please write to me directly at ', after: '.' },
     },
     crisis: {
@@ -112,11 +112,11 @@ export const contact: Record<Locale, ContactContent> = {
   },
   zh: {
     title: '联系',
-    description: `联系 Yiting Chen：咨询表单、电子邮件 ${site.email} 或电话 ${site.phone.display}。`,
+    description: `联系 Yiting Chen：联系表单、电子邮件 ${site.email} 或电话 ${site.phone.display}。`,
     head: {
       eyebrow: '联系',
       title: '给我写信',
-      lead: '一两句话就足够：您想谈什么、希望伴侣一起来还是独自来，以及使用哪种语言。我会回复您免费初次了解谈话的可约时间。',
+      lead: '一两句话就足够：您想谈什么、希望伴侣一起来还是独自来，以及使用哪种语言。我会回复您免费初次沟通的可约时间。',
     },
     details: {
       title: '联系方式',
@@ -130,18 +130,18 @@ export const contact: Record<Locale, ContactContent> = {
       email: '电子邮件',
       message: '您的留言',
       privacy: {
-        before: '您填写的信息会通过电子邮件发送给我，仅用于回复您的咨询。详见',
+        before: '您填写的信息会通过电子邮件发送给我，仅用于回复您的留言。详见',
         link: '隐私政策（德语）',
         after: '。',
       },
-      submit: '发送咨询',
+      submit: '发送留言',
       sending: '正在发送……',
-      sent: '谢谢，您的咨询已成功发送。我会与您联系。',
+      sent: '谢谢，您的留言已成功发送。我会尽快与您联系。',
       failed: { before: '很抱歉，发送未成功。请直接发送电子邮件至 ', after: '。' },
     },
     crisis: {
-      title: '处于急性危机时',
-      text: '伴侣治疗和个人教练不适用于急性危机。如果您正处于心理困境中，可以全天候免费拨打德国心理援助热线（Telefonseelsorge）：',
+      title: '如遇紧急心理危机',
+      text: '伴侣治疗和人生教练不适用于紧急心理危机。如果您正处于心理困境中，可以全天候免费拨打德国心理援助热线（Telefonseelsorge）：',
       or: '或',
       emergency: '如遇生命危险，请立即拨打急救电话：',
     },

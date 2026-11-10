@@ -60,12 +60,12 @@ export const ui: Record<Locale, UiStrings> = {
       title: 'The first step',
       text: "Send me a short note about what brings you here – a sentence or two is enough. I'll reply with suggested times.",
     },
-    footer: { imprint: 'Imprint (in German)', privacy: 'Privacy (in German)', terms: 'Terms (in German)' },
+    footer: { imprint: 'Legal notice (in German)', privacy: 'Privacy (in German)', terms: 'Terms (in German)' },
   },
   zh: {
     nav: {
       couples: '伴侣治疗',
-      coaching: '个人教练',
+      coaching: '人生教练',
       about: '关于我',
       faq: '常见问题',
       contact: '联系',
@@ -74,7 +74,7 @@ export const ui: Record<Locale, UiStrings> = {
     languageLabel: '语言',
     menuLabel: '菜单',
     skipLink: '跳到正文',
-    cta: { label: '预约初次了解谈话', note: '15 分钟的免费电话初次了解谈话。', call: `或致电：${site.phone.display}` },
+    cta: { label: '预约初次沟通', note: '15 分钟免费电话沟通，彼此初步了解。', call: `或致电：${site.phone.display}` },
     closing: {
       title: '迈出第一步',
       text: '请简单写下您想谈的内容，一两句话就足够。我会回复您可预约的时间。',
