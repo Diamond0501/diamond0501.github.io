@@ -79,7 +79,7 @@ The pre-commit hook runs ESLint and Prettier on staged files and blocks the comm
 
 ## Images and credits
 
-- Stock photos are faceless and culturally neutral, from Unsplash or Pexels. Every file in `src/assets/photos/` needs an entry (photographer, page URL, licence) in `src/assets/photos/CREDITS.md`. Her own portrait stays out of `photos/`
+- Stock photos are faceless and culturally neutral, from Unsplash or Pexels. Their colours are natural and saturated like the hero photo, not muted to match the sand palette. People are large in the frame and in warm light; no hiking scenes, tiny figures in a landscape or still lifes. The Coaching photo shows no identifiable gender, so the offer does not read as meant for women or men only. Every file in `src/assets/photos/` needs an entry (photographer, page URL, licence) in `src/assets/photos/CREDITS.md`. Her own portrait stays out of `photos/`
 
 # Important Notes
 
