@@ -5,7 +5,6 @@ export interface HomeContent {
   description: string;
   hero: { claim: string; sub: string; photoAlt: string };
   offers: { title: string; couples: Offer; coaching: Offer };
-  comingSoon: { title: string; text: string };
 }
 
 interface Offer {
@@ -60,10 +59,6 @@ export const home: Record<Locale, HomeContent> = {
         link: 'Mehr zum Coaching',
       },
     },
-    comingSoon: {
-      title: 'Die Website ist im Aufbau',
-      text: 'Ausführliche Informationen zu Paartherapie und Coaching finden Sie hier in Kürze. Ein Kennenlerngespräch können Sie schon jetzt anfragen: über das Formular, per E-Mail oder telefonisch.',
-    },
   },
   en: {
     title: 'Couples therapy & coaching online',
@@ -109,10 +104,6 @@ export const home: Record<Locale, HomeContent> = {
         link: 'More about coaching',
       },
     },
-    comingSoon: {
-      title: 'This website is under construction',
-      text: 'You will find detailed information on couples therapy and coaching here soon. You can already request an intro call: through the form, by email, or by phone.',
-    },
   },
   zh: {
     title: '线上伴侣治疗与人生教练',
@@ -145,10 +136,6 @@ export const home: Record<Locale, HomeContent> = {
         ],
         link: '了解人生教练',
       },
-    },
-    comingSoon: {
-      title: '网站正在建设中',
-      text: '关于伴侣治疗和人生教练的详细介绍即将上线。您现在就可以通过表单、电子邮件或电话预约初次沟通。',
     },
   },
 };

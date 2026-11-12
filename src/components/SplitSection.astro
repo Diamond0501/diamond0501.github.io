@@ -2,12 +2,11 @@
 interface Props {
   title: string;
   eyebrow?: string;
-  lead?: string;
   tinted?: boolean;
   id?: string;
 }
 
-const { title, eyebrow, lead, tinted = false, id } = Astro.props;
+const { title, eyebrow, tinted = false, id } = Astro.props;
 ---
 
 <section class={tinted ? 'tint' : 'section'} {id}>
@@ -15,7 +14,6 @@ const { title, eyebrow, lead, tinted = false, id } = Astro.props;
     <div>
       {eyebrow && <p class="eyebrow">{eyebrow}</p>}
       <h2>{title}</h2>
-      {lead && <p class="lead">{lead}</p>}
     </div>
     <div>
       <slot />

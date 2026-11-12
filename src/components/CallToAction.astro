@@ -1,6 +1,6 @@
 ---
 import { site, type Locale } from '../data/site';
-import { formPathFor } from '../i18n/routes';
+import { pathFor } from '../i18n/routes';
 import { ui } from '../i18n/ui';
 
 interface Props {
@@ -11,7 +11,7 @@ const { locale } = Astro.props;
 ---
 
 <div class="actions">
-  <a class="btn" href={formPathFor(locale)}>
+  <a class="btn" href={`${pathFor('contact', locale)}#anfrage`}>
     {ui[locale].cta.label}
   </a>
   <a class="call" href={site.phone.href}>

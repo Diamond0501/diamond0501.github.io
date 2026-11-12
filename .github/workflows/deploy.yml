@@ -20,12 +20,7 @@ jobs:
       - name: Check and build
         uses: withastro/action@3eafd002e65cc31b4f0eae0bb05450d521562247 # v6.1.3
         with:
-          # The full site is built and checked first, so it stays launchable. Until launch the last
-          # command then replaces it with the notice page that carries the request form; remove that
-          # command to launch.
-          build-cmd: >-
-            pnpm lint && pnpm format:check && pnpm check && pnpm build && pnpm check:launch &&
-            PUBLIC_SITE_STAGE=coming-soon pnpm build
+          build-cmd: pnpm lint && pnpm format:check && pnpm check && pnpm build && pnpm check:launch
 
   deploy:
     needs: build

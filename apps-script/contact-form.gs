@@ -3,7 +3,7 @@
 // It stores nothing: the email in her inbox is the only copy.
 
 const RECIPIENT = 'mail@yitingchen.de';
-// The same limits as the form's maxlength attributes in src/components/ContactSections.astro.
+// The same limits as the form's maxlength attributes in src/components/pages/ContactPage.astro.
 const MAX_LENGTH = { name: 200, email: 254, message: 5000 };
 // A script can skip the honeypot, so at most this many requests per hour reach her inbox.
 const MAX_MAILS_PER_HOUR = 20;

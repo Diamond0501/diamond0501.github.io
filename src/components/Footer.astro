@@ -1,6 +1,5 @@
 ---
 import { site, type Locale } from '../data/site';
-import { hasTerms } from '../i18n/routes';
 import { ui } from '../i18n/ui';
 
 interface Props {
@@ -19,11 +18,9 @@ const t = ui[locale].footer;
     <a href="/datenschutz/" hreflang={site.locales.de}>
       {t.privacy}
     </a>
-    {hasTerms && (
-      <a href="/agb/" hreflang={site.locales.de}>
-        {t.terms}
-      </a>
-    )}
+    <a href="/agb/" hreflang={site.locales.de}>
+      {t.terms}
+    </a>
     <span>
       © {new Date().getFullYear()} {site.name}
     </span>

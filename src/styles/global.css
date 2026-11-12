@@ -173,11 +173,6 @@
     border-left: 1px solid var(--color-rule);
   }
 
-  .nav-bare > .langs {
-    padding-left: 0;
-    border-left: 0;
-  }
-
   .langs > :is(a, span) {
     padding: 0.3rem 0.45rem;
     font-size: 0.85rem;
@@ -509,10 +504,6 @@
   .two-col h2 {
     font-size: clamp(2.2rem, 4.4vw, 3.6rem);
     line-height: 1.05;
-  }
-
-  .two-col .lead {
-    margin-top: 1.25rem;
   }
 
   .text {
@@ -940,11 +931,6 @@
       display: block;
     }
 
-    /* Without page links the menu holds only the language switcher, which moves in at 520px. */
-    .nav-bare .menu {
-      display: none;
-    }
-
     .hero-text {
       max-width: 28rem;
     }
@@ -1026,10 +1012,6 @@
 
     .menu-panel .langs {
       display: flex;
-    }
-
-    .nav-bare .menu {
-      display: block;
     }
 
     .nav-cta {
