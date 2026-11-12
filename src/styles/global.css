@@ -11,9 +11,9 @@
  * - Sky: 900 for the wordmark, h1, the price figures and the form labels. h2 and h3 take the body
  *   colour. 800 is for text links (including the email and phone links), icons and focus, and 200
  *   only for the fill layer of duotone icons.
- * - Orange marks the calls to action and the small accents: 700 for filled buttons, the Kontakt
- *   button and eyebrows, 800 as button hover, 600 for the nav underline and the active-language and
- *   menu markers.
+ * - Amber marks the calls to action and the small accents: 700 for filled buttons and the Kontakt
+ *   button, 800 for button hover and eyebrows (700 falls short of 4.5:1 on orange-100), 600 for the
+ *   nav underline and the active-language and menu markers.
  * - rule (hairlines), edge (card borders) and field (form field borders, 3:1 on white) are
  *   translucent sky-900.
  */
@@ -24,9 +24,9 @@
   --color-orange-100: oklch(95.4% 0.038 75.164);
   --color-stone-600: oklch(44.4% 0.011 73.639);
   --color-stone-800: oklch(26.8% 0.007 34.298);
-  --color-orange-600: oklch(64.6% 0.222 41.116);
-  --color-orange-700: oklch(55.3% 0.195 38.402);
-  --color-orange-800: oklch(47% 0.157 37.304);
+  --color-amber-600: oklch(66.6% 0.179 58.318);
+  --color-amber-700: oklch(55.5% 0.163 48.998);
+  --color-amber-800: oklch(47.3% 0.137 46.201);
   --color-sky-200: oklch(90.1% 0.058 230.902);
   --color-sky-800: oklch(44.3% 0.11 240.79);
   --color-sky-900: oklch(39.1% 0.09 240.876);
@@ -143,7 +143,7 @@
 
   .links a {
     padding-bottom: 2px;
-    background: linear-gradient(var(--color-orange-600), var(--color-orange-600)) 0 100% / 0 2px no-repeat;
+    background: linear-gradient(var(--color-amber-600), var(--color-amber-600)) 0 100% / 0 2px no-repeat;
     text-decoration: none;
     transition: background-size 0.35s ease;
   }
@@ -193,7 +193,7 @@
     padding: 0.55rem 1.1rem;
     border: 1px solid currentColor;
     border-radius: 10px;
-    color: var(--color-orange-700);
+    color: var(--color-amber-700);
     font-size: 0.95rem;
     white-space: nowrap;
     text-decoration: none;
@@ -249,7 +249,7 @@
   .menu-panel li a:hover,
   .menu-panel li a[aria-current='page'] {
     text-decoration: underline;
-    text-decoration-color: var(--color-orange-600);
+    text-decoration-color: var(--color-amber-600);
     text-decoration-thickness: 2px;
     text-underline-offset: 0.35em;
   }
@@ -343,7 +343,7 @@
 
   .eyebrow {
     margin-bottom: 0.9rem;
-    color: var(--color-orange-700);
+    color: var(--color-amber-800);
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 0.16em;
@@ -385,7 +385,7 @@
     display: inline-block;
     padding: 0.95rem 1.6rem;
     border-radius: 10px;
-    background: var(--color-orange-700);
+    background: var(--color-amber-700);
     color: var(--color-white);
     font-weight: 600;
     text-decoration: none;
@@ -395,7 +395,7 @@
   }
 
   .btn:hover {
-    background: var(--color-orange-800);
+    background: var(--color-amber-800);
     transform: translateY(-2px);
   }
 
